@@ -1,1 +1,9 @@
-[]
+[
+  {
+    "id": 1742316646083,
+    "name": "John Doe",
+    "email": "johndoe@example.com",
+    "password": "$2b$10$stF4yWyrJzf7QnCCwIJbjekPyRyLGIsYba2BO4auIuHAslpw8kAbO",
+    "role": "donor"
+  }
+]

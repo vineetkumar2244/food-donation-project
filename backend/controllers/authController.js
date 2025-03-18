@@ -4,6 +4,7 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
 const usersFilePath = path.join(__dirname, "../data/users.json");
+const secretKey = "your_secret_key"; // Ensure it matches authMiddleware.js
 
 // Function to read users from JSON
 const readUsers = () => {
@@ -57,17 +58,17 @@ const loginUser = (req, res) => {
         return res.status(401).json({ message: "Invalid credentials." });
     }
 
-    const token = jwt.sign({ id: user.id, role: user.role }, "secretkey", { expiresIn: "1h" });
+    const token = jwt.sign({ id: user.id, role: user.role }, secretKey, { expiresIn: "1h" });
     res.json({ token, role: user.role });
 };
 
-// **Get All Users**
+// **Get All Users** (Admin Only)
 const getAllUsers = (req, res) => {
     const users = readUsers();
     res.json(users);
 };
 
-// **Get User by ID**
+// **Get User by ID** (Admin Only)
 const getUserById = (req, res) => {
     const users = readUsers();
     const user = users.find(user => user.id == req.params.id);
@@ -79,7 +80,7 @@ const getUserById = (req, res) => {
     res.json(user);
 };
 
-// **Delete User**
+// **Delete User** (Admin Only)
 const deleteUser = (req, res) => {
     let users = readUsers();
     const updatedUsers = users.filter(user => user.id != req.params.id);

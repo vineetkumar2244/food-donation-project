@@ -7,6 +7,7 @@ function DonorDashboard() {
     const [foodItem, setFoodItem] = useState("");
     const [quantity, setQuantity] = useState("");
     const [pickupLocation, setPickupLocation] = useState("");
+    const [expiryDate, setExpiryDate] = useState("");
     const [activeListings, setActiveListings] = useState([]);
     const [claimedListings, setClaimedListings] = useState([]);
 
@@ -40,55 +41,37 @@ function DonorDashboard() {
                     "Content-Type": "application/json",
                     Authorization: `Bearer ${token}`,
                 },
-                body: JSON.stringify({ foodItem, quantity, pickupLocation }),
+                body: JSON.stringify({ foodItem, quantity, pickupLocation, expiryDate }),
             });
             if (response.ok) {
                 fetchFoodListings();
                 setFoodItem("");
                 setQuantity("");
                 setPickupLocation("");
+                setExpiryDate("");
             }
         } catch (error) {
             console.error("Error adding listing:", error);
         }
     };
 
-    // Delete a listing
-    const handleDelete = async (id) => {
-        try {
-            await fetch(`http://localhost:5000/api/food/delete/${id}`, {
-                method: "DELETE",
-                headers: { Authorization: `Bearer ${token}` },
-            });
-            fetchFoodListings();
-        } catch (error) {
-            console.error("Error deleting listing:", error);
-        }
-    };
-
-    // Logout
-    const handleLogout = () => {
-        localStorage.removeItem("token");
-        localStorage.removeItem("role");
-        navigate("/");
-    };
-
     return (
         <div>
             <h2>Donor Dashboard</h2>
-            <button onClick={handleLogout}>Logout</button>
+            <button onClick={() => navigate("/")}>Logout</button>
 
             <h3>Add Food Listing</h3>
             <input type="text" placeholder="Food Item" value={foodItem} onChange={(e) => setFoodItem(e.target.value)} />
             <input type="number" placeholder="Quantity" value={quantity} onChange={(e) => setQuantity(e.target.value)} />
             <input type="text" placeholder="Pickup Location" value={pickupLocation} onChange={(e) => setPickupLocation(e.target.value)} />
+            <input type="date" value={expiryDate} onChange={(e) => setExpiryDate(e.target.value)} />
             <button onClick={handleAddListing}>Add Listing</button>
 
             <h3>Active Listings</h3>
             <ul>
                 {activeListings.map((listing) => (
                     <li key={listing.id}>
-                        {listing.foodItem} - {listing.quantity} ({listing.pickupLocation}) 
+                        {listing.foodItem} - {listing.quantity} (Pickup: {listing.pickupLocation}, Expires: {listing.expiryDate})
                         <button onClick={() => handleDelete(listing.id)}>Delete</button>
                     </li>
                 ))}

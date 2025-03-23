@@ -3,6 +3,7 @@ const router = express.Router();
 const fs = require("fs");
 const path = require("path");
 const verifyRole = require("../middleware/authMiddleware");
+const usersFilePath = path.join(__dirname, "../data/users.json");
 
 const foodFilePath = path.join(__dirname, "../data/foodListings.json");
 
@@ -19,17 +20,25 @@ const writeFoodListings = (listings) => {
     fs.writeFileSync(foodFilePath, JSON.stringify(listings, null, 2));
 };
 
+// Read Users (for fetching donor info)
+const readUsers = () => {
+    if (!fs.existsSync(usersFilePath)) {
+        fs.writeFileSync(usersFilePath, JSON.stringify([]));
+    }
+    return JSON.parse(fs.readFileSync(usersFilePath, "utf8"));
+};
+
 // **Add Food Listing (Donor Only)**
 router.post("/add", verifyRole(["donor"]), (req, res) => {
-    const { foodItem, quantity, pickupLocation } = req.body;
-    const donorId = req.user.id; 
+    const { foodItem, quantity, pickupLocation, expiryDate } = req.body;
+    const donorId = req.user.id;
 
-    if (!foodItem || !quantity || !pickupLocation) {
+    if (!foodItem || !quantity || !pickupLocation || !expiryDate) {
         return res.status(400).json({ message: "All fields are required." });
     }
 
     let foodListings = readFoodListings();
-    const newListing = { id: Date.now(), donorId, foodItem, quantity, pickupLocation, claimedBy: null };
+    const newListing = { id: Date.now(), donorId, foodItem, quantity, pickupLocation, expiryDate, claimedBy: null };
     foodListings.push(newListing);
     writeFoodListings(foodListings);
 
@@ -38,7 +47,19 @@ router.post("/add", verifyRole(["donor"]), (req, res) => {
 
 // **Get All Food Listings (NGO Only)**
 router.get("/all", verifyRole(["ngo"]), (req, res) => {
-    const foodListings = readFoodListings();
+    let foodListings = readFoodListings();
+    let users = readUsers();
+
+    // Include donor details for unclaimed food
+    foodListings = foodListings.map(listing => {
+        const donor = users.find(user => user.id === listing.donorId);
+        return {
+            ...listing,
+            donorName: donor ? donor.name : "Unknown",
+            donorEmail: donor ? donor.email : "Unknown"
+        };
+    });
+
     res.json(foodListings);
 });
 

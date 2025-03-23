@@ -6,15 +6,6 @@
     "quantity": "10",
     "pickupLocation": "agra",
     "expiryDate": "2025-03-28",
-    "claimedBy": 1742722750804
-  },
-  {
-    "id": 1742728253114,
-    "donorId": 1742722824579,
-    "foodItem": "coke",
-    "quantity": "5",
-    "pickupLocation": "agra",
-    "expiryDate": "2025-03-28",
     "claimedBy": null
   },
   {
@@ -33,6 +24,6 @@
     "quantity": "10",
     "pickupLocation": "jaipur",
     "expiryDate": "2025-04-01",
-    "claimedBy": null
+    "claimedBy": 1742722619552
   }
 ]

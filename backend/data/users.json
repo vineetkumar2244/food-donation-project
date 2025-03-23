@@ -5,5 +5,40 @@
     "email": "johndoe@example.com",
     "password": "$2b$10$stF4yWyrJzf7QnCCwIJbjekPyRyLGIsYba2BO4auIuHAslpw8kAbO",
     "role": "donor"
+  },
+  {
+    "id": 1742722053704,
+    "name": "vinee",
+    "email": "vk@gmail.com",
+    "password": "$2b$10$BiQs9Dqik63y2izjhpmoL.b5K0Ng/OzAUrsRn41jb3l2BJ7d6dGly",
+    "role": "donor"
+  },
+  {
+    "id": 1742722559316,
+    "name": "add",
+    "email": "add@gmail.com",
+    "password": "$2b$10$csC/Yc9ap2QMcbzpLpCj6.9pagPORnJJuU5tqEHn4.5OfpA51CS6O",
+    "role": "donor"
+  },
+  {
+    "id": 1742722619552,
+    "name": "don",
+    "email": "don@gmail.com",
+    "password": "$2b$10$UnbdzPX07zozO9u3CvgDROfxpAQatE3IIqvJU73r4L78p7xFPyddy",
+    "role": "ngo"
+  },
+  {
+    "id": 1742722750804,
+    "name": "di",
+    "email": "di@gmail.comn",
+    "password": "$2b$10$lTYYX6sD9mLA1nCHp5MrreOCmPQcADQonp30.18MTKyflcj9khGbW",
+    "role": "ngo"
+  },
+  {
+    "id": 1742722824579,
+    "name": "Vineet ",
+    "email": "v@gmail.com",
+    "password": "$2b$10$2qPNpYvZYNOQwdaRwksDGO6msIRcS5NpIpclr/6Imoqv/2KGeeXqq",
+    "role": "donor"
   }
 ]

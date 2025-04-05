@@ -1,32 +1,56 @@
+import pandas as pd
 import json
-import sys
-from collections import defaultdict
+from sklearn.linear_model import LogisticRegression
+from sklearn.preprocessing import LabelEncoder
+import math
 
-# File paths
-data_path = "./data/foodListings.json"
+# Load food listings
+with open("data/foodListings.json", "r") as f:
+    listings = json.load(f)
 
-# Load food listing data
-with open(data_path, "r") as f:
-    food_data = json.load(f)
+# Convert to DataFrame
+df = pd.DataFrame(listings)
 
-# Count how often each food item is claimed at each location
-claim_counts = defaultdict(int)
-total_claims = defaultdict(int)
+# If there's nothing to process, stop
+if df.empty:
+    exit()
 
-for item in food_data:
-    if item.get("claimedBy"):
-        key = (item["foodItem"].lower(), item["pickupLocation"].lower())
-        claim_counts[key] += 1
-        total_claims[item["foodItem"].lower()] += 1
+# Encode food item and location
+le_food = LabelEncoder()
+le_loc = LabelEncoder()
+df["foodItem_encoded"] = le_food.fit_transform(df["foodItem"])
+df["pickupLocation_encoded"] = le_loc.fit_transform(df["pickupLocation"])
 
-# Predict demand score for new (unclaimed) listings
-for item in food_data:
-    if not item.get("demandScore"):  # Only set if not already set
-        key = (item["foodItem"].lower(), item["pickupLocation"].lower())
-        total = total_claims[item["foodItem"].lower()]
-        score = (claim_counts[key] / total) * 100 if total > 0 else 0
-        item["demandScore"] = round(score, 2)
+# Label data: claimed = 1, unclaimed = 0
+df["demandLabel"] = df["claimedBy"].apply(lambda x: 1 if pd.notnull(x) else 0)
 
-# Write back updated data
-with open(data_path, "w") as f:
-    json.dump(food_data, f, indent=2)
+# Training data
+X = df[["foodItem_encoded", "pickupLocation_encoded"]]
+y = df["demandLabel"]
+
+# Train model
+model = LogisticRegression()
+model.fit(X, y)
+
+# Predict demand probability (i.e., demand score)
+df["demandScore"] = model.predict_proba(X)[:, 1] * 100
+df["demandScore"] = df["demandScore"].round(1)
+
+# Drop helper columns
+df.drop(columns=["foodItem_encoded", "pickupLocation_encoded", "demandLabel"], inplace=True)
+
+# Convert to list of dictionaries
+records = df.to_dict(orient="records")
+
+# Replace NaN with None manually
+for item in records:
+    for key, value in item.items():
+        if isinstance(value, float) and math.isnan(value):
+            item[key] = None
+
+# Save to JSON
+with open("data/foodListings.json", "w") as f:
+    json.dump(records, f, indent=2)
+
+print("Demand scores updated and NaN values fixed.")
+

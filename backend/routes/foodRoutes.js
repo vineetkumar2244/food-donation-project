@@ -52,15 +52,7 @@ router.post("/add", verifyRole(["donor"]), async (req, res) => {
     foodListings.push(newListing);
     writeFoodListings(foodListings);
 
-    // Run Python demand prediction model
-    exec("python3 demandModel.py", (error, stdout, stderr) => {
-        if (error) {
-            console.error("Error running demand model:", error);
-            return res.status(500).json({ message: "Listing added, but failed to calculate demand score." });
-        }
-
-        res.status(201).json({ message: "Food listing added successfully with demand score." });
-    });
+    res.status(201).json({ message: "Food listing added successfully." });
 });
 
 // **Get All Food Listings (NGO Only)**
@@ -104,7 +96,15 @@ router.put("/claim/:id", verifyRole(["ngo"]), (req, res) => {
     foodListings[foodIndex].claimedBy = req.user.id;
     writeFoodListings(foodListings);
 
-    res.json({ message: "Food claimed successfully." });
+    // ✅ Run Python model after claim
+    exec("python demandModel.py", (error, stdout, stderr) => {
+        if (error) {
+            console.error("Error running demand model after claim:", error);
+            return res.status(500).json({ message: "Food claimed, but failed to update demand scores." });
+        }
+
+        res.json({ message: "Food claimed successfully and demand scores updated." });
+    });
 });
 
 // **Delete Listing (Donor Only)**

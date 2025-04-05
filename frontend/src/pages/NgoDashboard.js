@@ -11,7 +11,6 @@ function NgoDashboard() {
         fetchFoodListings();
     }, []);
 
-    // Fetch all food listings
     const fetchFoodListings = async () => {
         try {
             const response = await fetch("http://localhost:5000/api/food/all", {
@@ -19,7 +18,6 @@ function NgoDashboard() {
             });
             const data = await response.json();
 
-            // Separate available and claimed listings
             setAvailableListings(data.filter(listing => !listing.claimedBy));
             setClaimedListings(data.filter(listing => listing.claimedBy));
         } catch (error) {
@@ -27,7 +25,6 @@ function NgoDashboard() {
         }
     };
 
-    // Claim food listing
     const handleClaim = async (id) => {
         try {
             const response = await fetch(`http://localhost:5000/api/food/claim/${id}`, {
@@ -58,8 +55,11 @@ function NgoDashboard() {
                 <ul>
                     {availableListings.map((listing) => (
                         <li key={listing.id}>
-                            <strong>{listing.foodItem}</strong> - {listing.quantity}  
+                            <strong>{listing.foodItem}</strong> - {listing.quantity}
                             (Pickup: {listing.pickupLocation}, Expires: {listing.expiryDate})  
+                            <br />
+                            <em>Demand Score: {listing.demandScore ?? "Calculating..."}</em>  
+                            <br />
                             <button onClick={() => handleClaim(listing.id)}>Claim</button>
                         </li>
                     ))}
@@ -74,10 +74,12 @@ function NgoDashboard() {
                 <ul>
                     {claimedListings.map((listing) => (
                         <li key={listing.id}>
-                            <strong>{listing.foodItem}</strong> - {listing.quantity}  
+                            <strong>{listing.foodItem}</strong> - {listing.quantity}
                             (Pickup: {listing.pickupLocation}, Expires: {listing.expiryDate})  
                             <br />
-                            <em>Donor: {listing.donorName} ({listing.donorEmail})</em>  
+                            <em>Donor: {listing.donorName} ({listing.donorEmail})</em>
+                            <br />
+                            <em>Demand Score: {listing.demandScore ?? "N/A"}</em>
                         </li>
                     ))}
                 </ul>

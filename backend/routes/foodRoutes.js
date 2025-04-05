@@ -2,9 +2,10 @@ const express = require("express");
 const router = express.Router();
 const fs = require("fs");
 const path = require("path");
+const { exec } = require("child_process");
 const verifyRole = require("../middleware/authMiddleware");
-const usersFilePath = path.join(__dirname, "../data/users.json");
 
+const usersFilePath = path.join(__dirname, "../data/users.json");
 const foodFilePath = path.join(__dirname, "../data/foodListings.json");
 
 // Read Food Listings
@@ -20,7 +21,7 @@ const writeFoodListings = (listings) => {
     fs.writeFileSync(foodFilePath, JSON.stringify(listings, null, 2));
 };
 
-// Read Users (for fetching donor info)
+// Read Users
 const readUsers = () => {
     if (!fs.existsSync(usersFilePath)) {
         fs.writeFileSync(usersFilePath, JSON.stringify([]));
@@ -29,7 +30,7 @@ const readUsers = () => {
 };
 
 // **Add Food Listing (Donor Only)**
-router.post("/add", verifyRole(["donor"]), (req, res) => {
+router.post("/add", verifyRole(["donor"]), async (req, res) => {
     const { foodItem, quantity, pickupLocation, expiryDate } = req.body;
     const donorId = req.user.id;
 
@@ -38,11 +39,28 @@ router.post("/add", verifyRole(["donor"]), (req, res) => {
     }
 
     let foodListings = readFoodListings();
-    const newListing = { id: Date.now(), donorId, foodItem, quantity, pickupLocation, expiryDate, claimedBy: null };
+    const newListing = {
+        id: Date.now(),
+        donorId,
+        foodItem,
+        quantity,
+        pickupLocation,
+        expiryDate,
+        claimedBy: null
+    };
+
     foodListings.push(newListing);
     writeFoodListings(foodListings);
 
-    res.status(201).json({ message: "Food listing added successfully." });
+    // Run Python demand prediction model
+    exec("python3 demandModel.py", (error, stdout, stderr) => {
+        if (error) {
+            console.error("Error running demand model:", error);
+            return res.status(500).json({ message: "Listing added, but failed to calculate demand score." });
+        }
+
+        res.status(201).json({ message: "Food listing added successfully with demand score." });
+    });
 });
 
 // **Get All Food Listings (NGO Only)**
@@ -50,7 +68,7 @@ router.get("/all", verifyRole(["ngo"]), (req, res) => {
     let foodListings = readFoodListings();
     let users = readUsers();
 
-    // Include donor details for unclaimed food
+    // Add donor info to each listing
     foodListings = foodListings.map(listing => {
         const donor = users.find(user => user.id === listing.donorId);
         return {
@@ -92,7 +110,9 @@ router.put("/claim/:id", verifyRole(["ngo"]), (req, res) => {
 // **Delete Listing (Donor Only)**
 router.delete("/delete/:id", verifyRole(["donor"]), (req, res) => {
     let foodListings = readFoodListings();
-    const updatedListings = foodListings.filter(listing => listing.id != req.params.id || listing.donorId !== req.user.id);
+    const updatedListings = foodListings.filter(
+        listing => listing.id != req.params.id || listing.donorId !== req.user.id
+    );
 
     if (updatedListings.length === foodListings.length) {
         return res.status(403).json({ message: "Unauthorized to delete this listing." });

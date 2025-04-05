@@ -1,29 +1,112 @@
 [
   {
-    "id": 1742728232249,
-    "donorId": 1742722824579,
-    "foodItem": "fanta",
-    "quantity": "10",
-    "pickupLocation": "agra",
-    "expiryDate": "2025-03-28",
-    "claimedBy": null
-  },
-  {
-    "id": 1742728266129,
-    "donorId": 1742722824579,
-    "foodItem": "pepsi",
-    "quantity": "3",
-    "pickupLocation": "agra",
-    "expiryDate": "2025-03-26",
-    "claimedBy": 1742722750804
-  },
-  {
-    "id": 1742728292529,
+    "id": 1743867744087,
     "donorId": 1742722559316,
     "foodItem": "rice",
     "quantity": "10",
+    "pickupLocation": "agra",
+    "expiryDate": "2025-04-11",
+    "claimedBy": 1742722750804,
+    "demandScore": 50
+  },
+  {
+    "id": 1743867759711,
+    "donorId": 1742722559316,
+    "foodItem": "rice",
+    "quantity": "13",
+    "pickupLocation": "delhi",
+    "expiryDate": "2025-04-19",
+    "claimedBy": 1742722750804,
+    "demandScore": 50
+  },
+  {
+    "id": 1743867774879,
+    "donorId": 1742722559316,
+    "foodItem": "oranges",
+    "quantity": "10",
+    "pickupLocation": "agra",
+    "expiryDate": "2025-04-23",
+    "claimedBy": 1742722750804,
+    "demandScore": 100.0
+  },
+  {
+    "id": 1743867808219,
+    "donorId": 1742722053704,
+    "foodItem": "rice",
+    "quantity": "15",
     "pickupLocation": "jaipur",
-    "expiryDate": "2025-04-01",
-    "claimedBy": 1742722619552
+    "expiryDate": "2025-04-17",
+    "claimedBy": null,
+    "demandScore": 0.0
+  },
+  {
+    "id": 1743867819570,
+    "donorId": 1742722053704,
+    "foodItem": "apple",
+    "quantity": "10",
+    "pickupLocation": "agra",
+    "expiryDate": "2025-04-23",
+    "claimedBy": null,
+    "demandScore": 0
+  },
+  {
+    "id": 1743867870233,
+    "donorId": 1742722053704,
+    "foodItem": "rice",
+    "quantity": "19",
+    "pickupLocation": "agra",
+    "expiryDate": "2025-04-17",
+    "claimedBy": 1742722750804,
+    "demandScore": 50
+  },
+  {
+    "id": 1743867944058,
+    "donorId": 1742722053704,
+    "foodItem": "rice",
+    "quantity": "15",
+    "pickupLocation": "delhi",
+    "expiryDate": "2025-04-23",
+    "claimedBy": 1742722750804,
+    "demandScore": 50
+  },
+  {
+    "id": 1743867957825,
+    "donorId": 1742722053704,
+    "foodItem": "rice",
+    "quantity": "12",
+    "pickupLocation": "agra",
+    "expiryDate": "2025-04-12",
+    "claimedBy": 1742722750804,
+    "demandScore": 50
+  },
+  {
+    "id": 1743867970605,
+    "donorId": 1742722053704,
+    "foodItem": "rice",
+    "quantity": "18",
+    "pickupLocation": "delhi",
+    "expiryDate": "2025-04-25",
+    "claimedBy": null,
+    "demandScore": 50
+  },
+  {
+    "id": 1743868025252,
+    "donorId": 1742722559316,
+    "foodItem": "rice",
+    "quantity": "17",
+    "pickupLocation": "agra",
+    "expiryDate": "2025-04-29",
+    "claimedBy": null,
+    "demandScore": 50
+  },
+  {
+    "id": 1743868111081,
+    "donorId": 1742722559316,
+    "foodItem": "rice",
+    "quantity": "11",
+    "pickupLocation": "agra",
+    "expiryDate": "2025-04-11",
+    "claimedBy": null,
+    "demandScore": 60.0
   }
 ]

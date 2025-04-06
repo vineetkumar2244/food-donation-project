@@ -59,8 +59,17 @@ router.post("/add", verifyRole(["donor"]), async (req, res) => {
 router.get("/all", verifyRole(["ngo"]), (req, res) => {
     let foodListings = readFoodListings();
     let users = readUsers();
+    const today = new Date();
 
-    // Add donor info to each listing
+    // Auto-delete expired listings
+    foodListings = foodListings.filter(listing => {
+        const expiry = new Date(listing.expiryDate);
+        return expiry >= today;
+    });
+
+    writeFoodListings(foodListings); // Save cleaned listings
+
+    // Add donor info
     foodListings = foodListings.map(listing => {
         const donor = users.find(user => user.id === listing.donorId);
         return {
@@ -72,6 +81,7 @@ router.get("/all", verifyRole(["ngo"]), (req, res) => {
 
     res.json(foodListings);
 });
+
 
 // **Get Donor's Own Listings**
 router.get("/my-listings", verifyRole(["donor"]), (req, res) => {

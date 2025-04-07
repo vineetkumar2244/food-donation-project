@@ -45,6 +45,33 @@ function NgoDashboard() {
         }
     };
 
+    const handleDownloadReport = async () => {
+        try {
+            const response = await fetch("http://localhost:5000/api/food/ngo-report", {
+                method: "GET",
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            });
+    
+            if (!response.ok) {
+                throw new Error("Failed to download NGO report");
+            }
+    
+            const blob = await response.blob();
+            const url = window.URL.createObjectURL(new Blob([blob]));
+            const link = document.createElement("a");
+            link.href = url;
+            link.setAttribute("download", "NGO_Report.pdf");
+            document.body.appendChild(link);
+            link.click();
+            link.parentNode.removeChild(link);
+        } catch (error) {
+            console.error("Error downloading NGO report:", error);
+        }
+    };
+    
+
     const getPriorityLabel = (expiryDate) => {
         const today = new Date();
         const expiry = new Date(expiryDate);
@@ -60,6 +87,11 @@ function NgoDashboard() {
             <h2>NGO Dashboard</h2>
             <button onClick={() => navigate("/")}>Logout</button>
 
+            {/* Download Report Button */}
+            <button onClick={handleDownloadReport} style={{ marginTop: "10px", marginBottom: "20px" }}>
+                Download NGO Report (PDF)
+            </button>
+
             {/* Available Listings */}
             <h3>Available Food Listings</h3>
             {availableListings.length === 0 ? (
@@ -69,13 +101,22 @@ function NgoDashboard() {
                     {availableListings.map((listing) => {
                         const priority = getPriorityLabel(listing.expiryDate);
                         return (
-                            <li key={listing.id} style={{ borderLeft: `5px solid ${priority.color}`, paddingLeft: "10px", marginBottom: "10px" }}>
-                                <strong>{listing.foodItem}</strong> - {listing.quantity}  
-                                (Pickup: {listing.pickupLocation}, Expires: {listing.expiryDate})  
+                            <li
+                                key={listing.id}
+                                style={{
+                                    borderLeft: `5px solid ${priority.color}`,
+                                    paddingLeft: "10px",
+                                    marginBottom: "10px",
+                                }}
+                            >
+                                <strong>{listing.foodItem}</strong> - {listing.quantity}
+                                (Pickup: {listing.pickupLocation}, Expires: {listing.expiryDate})
                                 <br />
-                                <em>Demand Score: {listing.demandScore ?? "Calculating..."}</em>  
+                                <em>Demand Score: {listing.demandScore ?? "Calculating..."}</em>
                                 <br />
-                                <span style={{ color: priority.color, fontWeight: "bold" }}>{priority.text}</span>  
+                                <span style={{ color: priority.color, fontWeight: "bold" }}>
+                                    {priority.text}
+                                </span>
                                 <br />
                                 <button onClick={() => handleClaim(listing.id)}>Claim</button>
                             </li>
@@ -93,7 +134,7 @@ function NgoDashboard() {
                     {claimedListings.map((listing) => (
                         <li key={listing.id}>
                             <strong>{listing.foodItem}</strong> - {listing.quantity}
-                            (Pickup: {listing.pickupLocation}, Expires: {listing.expiryDate})  
+                            (Pickup: {listing.pickupLocation}, Expires: {listing.expiryDate})
                             <br />
                             <em>Donor: {listing.donorName} ({listing.donorEmail})</em>
                             <br />

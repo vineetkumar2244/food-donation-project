@@ -153,4 +153,26 @@ router.get("/report", verifyRole(["donor"]), (req, res) => {
     });
 });
 
+// ✅ NGO Report Generation Route (Consistent with Donor Route)
+router.get("/ngo-report", verifyRole(["ngo"]), (req, res) => {
+    const ngoId = req.user.id;
+    const scriptPath = path.join(__dirname, "../ngoReport.py");
+
+    exec(`python ${scriptPath} ${ngoId}`, (error, stdout, stderr) => {
+        if (error) {
+            console.error("Python error:", error);
+            return res.status(500).json({ error: "Failed to generate NGO report" });
+        }
+
+        const reportPath = path.join(__dirname, `../reports/${ngoId}_report.pdf`);
+        if (fs.existsSync(reportPath)) {
+            res.sendFile(reportPath);
+        } else {
+            res.status(500).json({ error: "NGO Report file not found" });
+        }
+    });
+});
+
+
+
 module.exports = router;

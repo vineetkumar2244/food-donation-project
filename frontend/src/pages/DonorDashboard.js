@@ -7,7 +7,7 @@ function DonorDashboard() {
     const [foodItem, setFoodItem] = useState("");
     const [quantity, setQuantity] = useState("");
     const [pickupLocation, setPickupLocation] = useState("");
-    const [expiryDate, setExpiryDate] = useState(""); // Added Expiry Date
+    const [expiryDate, setExpiryDate] = useState("");
     const [activeListings, setActiveListings] = useState([]);
     const [claimedListings, setClaimedListings] = useState([]);
 
@@ -17,7 +17,6 @@ function DonorDashboard() {
         fetchFoodListings();
     }, []);
 
-    // Fetch donor's listings
     const fetchFoodListings = async () => {
         try {
             const response = await fetch("http://localhost:5000/api/food/my-listings", {
@@ -32,7 +31,6 @@ function DonorDashboard() {
         }
     };
 
-    // Add a new listing
     const handleAddListing = async () => {
         try {
             const response = await fetch("http://localhost:5000/api/food/add", {
@@ -41,7 +39,7 @@ function DonorDashboard() {
                     "Content-Type": "application/json",
                     Authorization: `Bearer ${token}`,
                 },
-                body: JSON.stringify({ foodItem, quantity, pickupLocation, expiryDate }), // Added expiryDate
+                body: JSON.stringify({ foodItem, quantity, pickupLocation, expiryDate }),
             });
 
             if (response.ok) {
@@ -49,31 +47,55 @@ function DonorDashboard() {
                 setFoodItem("");
                 setQuantity("");
                 setPickupLocation("");
-                setExpiryDate(""); // Reset expiry date
+                setExpiryDate("");
             }
         } catch (error) {
             console.error("Error adding listing:", error);
         }
     };
 
-    // Delete a listing
     const handleDelete = async (id) => {
         try {
             await fetch(`http://localhost:5000/api/food/delete/${id}`, {
                 method: "DELETE",
                 headers: { Authorization: `Bearer ${token}` },
             });
-            fetchFoodListings(); // Refresh listings
+            fetchFoodListings();
         } catch (error) {
             console.error("Error deleting listing:", error);
         }
     };
 
-    // Logout
     const handleLogout = () => {
         localStorage.removeItem("token");
         localStorage.removeItem("role");
         navigate("/");
+    };
+
+    const handleDownloadReport = async () => {
+        try {
+            const response = await fetch("http://localhost:5000/api/food/report", {
+                method: "GET",
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            });
+
+            if (!response.ok) {
+                throw new Error("Failed to download report");
+            }
+
+            const blob = await response.blob();
+            const url = window.URL.createObjectURL(new Blob([blob]));
+            const link = document.createElement("a");
+            link.href = url;
+            link.setAttribute("download", "Donor_Report.pdf");
+            document.body.appendChild(link);
+            link.click();
+            link.parentNode.removeChild(link);
+        } catch (error) {
+            console.error("Error downloading report:", error);
+        }
     };
 
     return (
@@ -88,12 +110,15 @@ function DonorDashboard() {
             <input type="date" placeholder="Expiry Date" value={expiryDate} onChange={(e) => setExpiryDate(e.target.value)} />
             <button onClick={handleAddListing}>Add Listing</button>
 
+            <h3>Monthly Donation Report</h3>
+            <button onClick={handleDownloadReport}>Download Report</button>
+
             <h3>Active Listings</h3>
             <ul>
                 {activeListings.map((listing) => (
                     <li key={listing.id}>
                         {listing.foodItem} - {listing.quantity} ({listing.pickupLocation}, Expires: {listing.expiryDate})
-                        <button onClick={() => handleDelete(listing.id)}>Delete</button> {/* ✅ Fix applied */}
+                        <button onClick={() => handleDelete(listing.id)}>Delete</button>
                     </li>
                 ))}
             </ul>

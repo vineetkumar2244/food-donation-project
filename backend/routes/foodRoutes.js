@@ -29,6 +29,8 @@ const readUsers = () => {
     return JSON.parse(fs.readFileSync(usersFilePath, "utf8"));
 };
 
+// Existing routes...
+
 // **Add Food Listing (Donor Only)**
 router.post("/add", verifyRole(["donor"]), async (req, res) => {
     const { foodItem, quantity, pickupLocation, expiryDate } = req.body;
@@ -82,7 +84,6 @@ router.get("/all", verifyRole(["ngo"]), (req, res) => {
     res.json(foodListings);
 });
 
-
 // **Get Donor's Own Listings**
 router.get("/my-listings", verifyRole(["donor"]), (req, res) => {
     const foodListings = readFoodListings();
@@ -130,6 +131,26 @@ router.delete("/delete/:id", verifyRole(["donor"]), (req, res) => {
 
     writeFoodListings(updatedListings);
     res.json({ message: "Listing deleted successfully." });
+});
+
+// ✅ NEW: Donor Report Generation Route
+router.get("/report", verifyRole(["donor"]), (req, res) => {
+    const donorId = req.user.id;
+    const scriptPath = path.join(__dirname, "../donorReport.py");
+
+    exec(`python ${scriptPath} ${donorId}`, (error, stdout, stderr) => {
+        if (error) {
+            console.error("Python error:", error);
+            return res.status(500).json({ error: "Failed to generate report" });
+        }
+
+        const reportPath = path.join(__dirname, `../reports/${donorId}_report.pdf`);
+        if (fs.existsSync(reportPath)) {
+            res.sendFile(reportPath);
+        } else {
+            res.status(500).json({ error: "Report file not found" });
+        }
+    });
 });
 
 module.exports = router;

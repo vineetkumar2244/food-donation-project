@@ -50,7 +50,20 @@ git clone https://github.com/vineetkumar2244/food-donation-project
 cd food-donation-project
 ```
 
-### 2. Install Node.js Dependencies (Backend + Frontend)
+### 2. Create Environment File
+Create a `.env` file in the backend directory and add your Python path:
+```bash
+# First, find your Python path
+# On Windows: where python
+# On Mac/Linux: which python
+
+# Then create the .env file
+cd backend
+echo PYTHON_PATH="your_python_path_here" > .env
+```
+Replace `your_python_path_here` with the actual path returned by the command.
+
+### 3. Install Node.js Dependencies (Backend + Frontend)
 Navigate to the backend directory and install dependencies:
 ```bash
 cd backend
@@ -63,7 +76,7 @@ cd frontend
 npm install
 ```
 
-### 3. Set Up Python Environment for AI and Reports
+### 4. Set Up Python Environment for AI and Reports
 Make sure Python is installed on your system. Then install the required Python libraries:
 
 ```bash

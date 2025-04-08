@@ -4,6 +4,9 @@ const fs = require("fs");
 const path = require("path");
 const { exec } = require("child_process");
 const verifyRole = require("../middleware/authMiddleware");
+require("dotenv").config(); // ✅ Load .env file
+
+const pythonPath = process.env.PYTHON_PATH || "python"; // ✅ Fallback to default if not set
 
 const usersFilePath = path.join(__dirname, "../data/users.json");
 const foodFilePath = path.join(__dirname, "../data/foodListings.json");
@@ -29,9 +32,7 @@ const readUsers = () => {
     return JSON.parse(fs.readFileSync(usersFilePath, "utf8"));
 };
 
-// Existing routes...
-
-// **Add Food Listing (Donor Only)**
+// Add Food Listing (Donor Only)
 router.post("/add", verifyRole(["donor"]), async (req, res) => {
     const { foodItem, quantity, pickupLocation, expiryDate } = req.body;
     const donorId = req.user.id;
@@ -54,24 +55,29 @@ router.post("/add", verifyRole(["donor"]), async (req, res) => {
     foodListings.push(newListing);
     writeFoodListings(foodListings);
 
-    res.status(201).json({ message: "Food listing added successfully." });
+    // Run Python model after add
+    exec(`${pythonPath} demandModel.py`, (error, stdout, stderr) => {
+        if (error) {
+            console.error("Error running demand model after add:", error);
+            return res.status(500).json({ message: "Food added, but failed to update demand scores." });
+        }
+        res.status(201).json({ message: "Food listing added and demand scores updated." });
+    });
 });
 
-// **Get All Food Listings (NGO Only)**
+// Get All Food Listings (NGO Only)
 router.get("/all", verifyRole(["ngo"]), (req, res) => {
     let foodListings = readFoodListings();
     let users = readUsers();
     const today = new Date();
 
-    // Auto-delete expired listings
     foodListings = foodListings.filter(listing => {
         const expiry = new Date(listing.expiryDate);
         return expiry >= today;
     });
 
-    writeFoodListings(foodListings); // Save cleaned listings
+    writeFoodListings(foodListings);
 
-    // Add donor info
     foodListings = foodListings.map(listing => {
         const donor = users.find(user => user.id === listing.donorId);
         return {
@@ -84,14 +90,14 @@ router.get("/all", verifyRole(["ngo"]), (req, res) => {
     res.json(foodListings);
 });
 
-// **Get Donor's Own Listings**
+// Get Donor's Own Listings
 router.get("/my-listings", verifyRole(["donor"]), (req, res) => {
     const foodListings = readFoodListings();
     const donorListings = foodListings.filter(listing => listing.donorId === req.user.id);
     res.json(donorListings);
 });
 
-// **Claim Food Listing (NGO Only)**
+// Claim Food Listing (NGO Only)
 router.put("/claim/:id", verifyRole(["ngo"]), (req, res) => {
     let foodListings = readFoodListings();
     const foodIndex = foodListings.findIndex(listing => listing.id == req.params.id);
@@ -107,8 +113,8 @@ router.put("/claim/:id", verifyRole(["ngo"]), (req, res) => {
     foodListings[foodIndex].claimedBy = req.user.id;
     writeFoodListings(foodListings);
 
-    // ✅ Run Python model after claim
-    exec("python demandModel.py", (error, stdout, stderr) => {
+    // ✅ Use custom python path
+    exec(`${pythonPath} demandModel.py`, (error, stdout, stderr) => {
         if (error) {
             console.error("Error running demand model after claim:", error);
             return res.status(500).json({ message: "Food claimed, but failed to update demand scores." });
@@ -118,7 +124,7 @@ router.put("/claim/:id", verifyRole(["ngo"]), (req, res) => {
     });
 });
 
-// **Delete Listing (Donor Only)**
+// Delete Listing (Donor Only)
 router.delete("/delete/:id", verifyRole(["donor"]), (req, res) => {
     let foodListings = readFoodListings();
     const updatedListings = foodListings.filter(
@@ -133,12 +139,12 @@ router.delete("/delete/:id", verifyRole(["donor"]), (req, res) => {
     res.json({ message: "Listing deleted successfully." });
 });
 
-// ✅ NEW: Donor Report Generation Route
+// Donor Report Generation Route
 router.get("/report", verifyRole(["donor"]), (req, res) => {
     const donorId = req.user.id;
     const scriptPath = path.join(__dirname, "../donorReport.py");
 
-    exec(`python ${scriptPath} ${donorId}`, (error, stdout, stderr) => {
+    exec(`${pythonPath} ${scriptPath} ${donorId}`, (error, stdout, stderr) => {
         if (error) {
             console.error("Python error:", error);
             return res.status(500).json({ error: "Failed to generate report" });
@@ -153,12 +159,12 @@ router.get("/report", verifyRole(["donor"]), (req, res) => {
     });
 });
 
-// ✅ NGO Report Generation Route (Consistent with Donor Route)
+// NGO Report Generation Route
 router.get("/ngo-report", verifyRole(["ngo"]), (req, res) => {
     const ngoId = req.user.id;
     const scriptPath = path.join(__dirname, "../ngoReport.py");
 
-    exec(`python ${scriptPath} ${ngoId}`, (error, stdout, stderr) => {
+    exec(`${pythonPath} ${scriptPath} ${ngoId}`, (error, stdout, stderr) => {
         if (error) {
             console.error("Python error:", error);
             return res.status(500).json({ error: "Failed to generate NGO report" });
@@ -172,7 +178,5 @@ router.get("/ngo-report", verifyRole(["ngo"]), (req, res) => {
         }
     });
 });
-
-
 
 module.exports = router;

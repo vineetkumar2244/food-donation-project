@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import styles from "../styles/DonorDashboard.module.css";
 
 function DonorDashboard() {
     const navigate = useNavigate();
@@ -99,38 +100,49 @@ function DonorDashboard() {
     };
 
     return (
-        <div>
+        <div className={styles.dashboardContainer}>
+            <div className={styles.header}>
             <h2>Donor Dashboard</h2>
-            <button onClick={handleLogout}>Logout</button>
+            <button onClick={handleLogout} className={styles.logoutButton}>Logout</button>
+            </div>
 
-            <h3>Add Food Listing</h3>
-            <input type="text" placeholder="Food Item" value={foodItem} onChange={(e) => setFoodItem(e.target.value)} />
-            <input type="number" placeholder="Quantity" value={quantity} onChange={(e) => setQuantity(e.target.value)} />
-            <input type="text" placeholder="Pickup Location" value={pickupLocation} onChange={(e) => setPickupLocation(e.target.value)} />
-            <input type="date" placeholder="Expiry Date" value={expiryDate} onChange={(e) => setExpiryDate(e.target.value)} />
-            <button onClick={handleAddListing}>Add Listing</button>
 
-            <h3>Monthly Donation Report</h3>
-            <button onClick={handleDownloadReport}>Download Report</button>
+            <div className={styles.addSection}>
+                <h3>Add Food Listing</h3>
+                <input className={styles.input} type="text" placeholder="Food Item" value={foodItem} onChange={(e) => setFoodItem(e.target.value)} />
+                <input className={styles.input} type="number" placeholder="Quantity" value={quantity} onChange={(e) => setQuantity(e.target.value)} />
+                <input className={styles.input} type="text" placeholder="Pickup Location" value={pickupLocation} onChange={(e) => setPickupLocation(e.target.value)} />
+                <input className={styles.input} type="date" placeholder="Expiry Date" value={expiryDate} onChange={(e) => setExpiryDate(e.target.value)} />
+                <button onClick={handleAddListing} className={styles.addButton}>Add Listing</button>
+            </div>
 
-            <h3>Active Listings</h3>
-            <ul>
-                {activeListings.map((listing) => (
-                    <li key={listing.id}>
-                        {listing.foodItem} - {listing.quantity} ({listing.pickupLocation}, Expires: {listing.expiryDate})
-                        <button onClick={() => handleDelete(listing.id)}>Delete</button>
-                    </li>
-                ))}
-            </ul>
+            <div className={styles.section}>
+                <h3>Monthly Donation Report</h3>
+                <button onClick={handleDownloadReport} className={styles.reportButton}>Download Report</button>
+            </div>
 
-            <h3>Claimed Listings</h3>
-            <ul>
-                {claimedListings.map((listing) => (
-                    <li key={listing.id}>
-                        {listing.foodItem} - {listing.quantity} (Claimed)
-                    </li>
-                ))}
-            </ul>
+            <div className={styles.section}>
+                <h3>Active Listings</h3>
+                <ul>
+                    {activeListings.map((listing) => (
+                        <li key={listing.id}>
+                            {listing.foodItem} - {listing.quantity} ({listing.pickupLocation}, Expires: {listing.expiryDate})
+                            <button onClick={() => handleDelete(listing.id)} className={styles.deleteButton}>Delete</button>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+
+            <div className={styles.section}>
+                <h3>Claimed Listings</h3>
+                <ul>
+                    {claimedListings.map((listing) => (
+                        <li key={listing.id}>
+                            {listing.foodItem} - {listing.quantity} (Claimed)
+                        </li>
+                    ))}
+                </ul>
+            </div>
         </div>
     );
 }

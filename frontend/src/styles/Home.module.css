@@ -1,0 +1,69 @@
+/* frontend/styles/Home.module.css */
+
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #fdf6ec, #e0f7f4);
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .card {
+    background-color: white;
+    padding: 60px 50px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 700px;  /* Increased from 500px */
+    width: 95%;
+  }
+  
+  .heading {
+    font-size: 2.7rem;
+    font-weight: bold;
+    color: #2e2e2e;
+    margin-bottom: 25px;
+  }
+  
+  .subheading {
+    font-size: 1.3rem;
+    color: #555;
+    margin-bottom: 45px;
+  }
+  
+  .buttonGroup {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+  }
+  
+  .button {
+    padding: 14px 28px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    color: white;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Login - green */
+  .buttonGroup a:nth-child(1) .button {
+    background-color: #6bbf59;
+  }
+  
+  .buttonGroup a:nth-child(1) .button:hover {
+    background-color: #579f47;
+  }
+  
+  /* Register - orange */
+  .buttonGroup a:nth-child(2) .button {
+    background-color: #ff914d;
+  }
+  
+  .buttonGroup a:nth-child(2) .button:hover {
+    background-color: #e6782e;
+  }
+  

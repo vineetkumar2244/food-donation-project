@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import styles from "../styles/NgoDashboard.module.css";
 
 function NgoDashboard() {
     const navigate = useNavigate();
@@ -18,7 +19,6 @@ function NgoDashboard() {
             });
             let data = await response.json();
 
-            // Sort by soonest expiry first
             data = data.sort((a, b) => new Date(a.expiryDate) - new Date(b.expiryDate));
 
             setAvailableListings(data.filter(listing => !listing.claimedBy));
@@ -34,22 +34,19 @@ function NgoDashboard() {
                 method: "PUT",
                 headers: { Authorization: `Bearer ${token}` },
             });
-    
-            const result = await response.json();
-    
+
             if (response.ok) {
-                // Wait a small delay before fetching listings to ensure backend updates are complete
                 setTimeout(() => {
-                    fetchFoodListings(); // Refresh listings after successful claim and model run
-                }, 300); // 300ms delay should be enough
+                    fetchFoodListings();
+                }, 300);
             } else {
+                const result = await response.json();
                 console.error("Failed to claim food:", result.message);
             }
         } catch (error) {
             console.error("Error claiming food:", error);
         }
     };
-    
 
     const handleDownloadReport = async () => {
         try {
@@ -59,11 +56,11 @@ function NgoDashboard() {
                     Authorization: `Bearer ${token}`,
                 },
             });
-    
+
             if (!response.ok) {
                 throw new Error("Failed to download NGO report");
             }
-    
+
             const blob = await response.blob();
             const url = window.URL.createObjectURL(new Blob([blob]));
             const link = document.createElement("a");
@@ -76,7 +73,6 @@ function NgoDashboard() {
             console.error("Error downloading NGO report:", error);
         }
     };
-    
 
     const getPriorityLabel = (expiryDate) => {
         const today = new Date();
@@ -89,66 +85,69 @@ function NgoDashboard() {
     };
 
     return (
-        <div>
-            <h2>NGO Dashboard</h2>
-            <button onClick={() => navigate("/")}>Logout</button>
+        <div className={styles.dashboardContainer}>
+            <div className={styles.contentWrapper}>
+                <div className={styles.header}>
+                    <h2>NGO Dashboard</h2>
+                    <button onClick={() => navigate("/")} className={styles.logoutButton}>Logout</button>
+                </div>
 
-            {/* Download Report Button */}
-            <button onClick={handleDownloadReport} style={{ marginTop: "10px", marginBottom: "20px" }}>
-                Download NGO Report (PDF)
-            </button>
+                <button onClick={handleDownloadReport} className={styles.reportButton}>
+                    Download NGO Report (PDF)
+                </button>
 
-            {/* Available Listings */}
-            <h3>Available Food Listings</h3>
-            {availableListings.length === 0 ? (
-                <p>No available food listings.</p>
-            ) : (
-                <ul>
-                    {availableListings.map((listing) => {
-                        const priority = getPriorityLabel(listing.expiryDate);
-                        return (
-                            <li
-                                key={listing.id}
-                                style={{
-                                    borderLeft: `5px solid ${priority.color}`,
-                                    paddingLeft: "10px",
-                                    marginBottom: "10px",
-                                }}
-                            >
-                                <strong>{listing.foodItem}</strong> - {listing.quantity}
-                                (Pickup: {listing.pickupLocation}, Expires: {listing.expiryDate})
-                                <br />
-                                <em>Demand Score: {listing.demandScore ?? "Calculating..."}</em>
-                                <br />
-                                <span style={{ color: priority.color, fontWeight: "bold" }}>
-                                    {priority.text}
-                                </span>
-                                <br />
-                                <button onClick={() => handleClaim(listing.id)}>Claim</button>
-                            </li>
-                        );
-                    })}
-                </ul>
-            )}
+                <div className={styles.section}>
+                    <h3>Available Food Listings</h3>
+                    {availableListings.length === 0 ? (
+                        <p>No available food listings.</p>
+                    ) : (
+                        <ul>
+                            {availableListings.map((listing) => {
+                                const priority = getPriorityLabel(listing.expiryDate);
+                                return (
+                                    <li key={listing.id} style={{ borderLeft: `5px solid ${priority.color}` }}>
+                                        <strong>{listing.foodItem}</strong> - {listing.quantity}
+                                        (Pickup: {listing.pickupLocation}, Expires: {listing.expiryDate})
+                                        <br />
+                                        <em>Demand Score: {listing.demandScore ?? "Calculating..."}</em>
+                                        <br />
+                                        <span style={{ color: priority.color, fontWeight: "bold" }}>
+                                            {priority.text}
+                                        </span>
+                                        <br />
+                                        <button
+                                            className={styles.claimButton}
+                                            onClick={() => handleClaim(listing.id)}
+                                        >
+                                            Claim
+                                        </button>
+                                    </li>
+                                );
+                            })}
+                        </ul>
+                    )}
+                </div>
 
-            {/* Claimed Listings */}
-            <h3>Claimed Food Listings</h3>
-            {claimedListings.length === 0 ? (
-                <p>No claimed food listings.</p>
-            ) : (
-                <ul>
-                    {claimedListings.map((listing) => (
-                        <li key={listing.id}>
-                            <strong>{listing.foodItem}</strong> - {listing.quantity}
-                            (Pickup: {listing.pickupLocation}, Expires: {listing.expiryDate})
-                            <br />
-                            <em>Donor: {listing.donorName} ({listing.donorEmail})</em>
-                            <br />
-                            <em>Demand Score: {listing.demandScore ?? "N/A"}</em>
-                        </li>
-                    ))}
-                </ul>
-            )}
+                <div className={styles.section}>
+                    <h3>Claimed Food Listings</h3>
+                    {claimedListings.length === 0 ? (
+                        <p>No claimed food listings.</p>
+                    ) : (
+                        <ul>
+                            {claimedListings.map((listing) => (
+                                <li key={listing.id}>
+                                    <strong>{listing.foodItem}</strong> - {listing.quantity}
+                                    (Pickup: {listing.pickupLocation}, Expires: {listing.expiryDate})
+                                    <br />
+                                    <em>Donor: {listing.donorName} ({listing.donorEmail})</em>
+                                    <br />
+                                    <em>Demand Score: {listing.demandScore ?? "N/A"}</em>
+                                </li>
+                            ))}
+                        </ul>
+                    )}
+                </div>
+            </div>
         </div>
     );
 }

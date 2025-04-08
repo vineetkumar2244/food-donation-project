@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import styles from "../styles/Login.module.css";
 
 function Login() {
     const [email, setEmail] = useState("");
@@ -22,15 +23,14 @@ function Login() {
 
             if (response.ok) {
                 localStorage.setItem("token", data.token);
-                localStorage.setItem("role", data.role); // Store role
+                localStorage.setItem("role", data.role);
 
-                // Redirect based on role
                 if (data.role === "donor") {
                     navigate("/donor-dashboard");
                 } else if (data.role === "ngo") {
                     navigate("/ngo-dashboard");
                 } else {
-                    navigate("/"); // Default to home if role is unknown
+                    navigate("/");
                 }
             } else {
                 setError(data.message || "Login failed.");
@@ -41,14 +41,32 @@ function Login() {
     };
 
     return (
-        <div>
-            <h2>Login</h2>
-            {error && <p style={{ color: "red" }}>{error}</p>}
-            <form onSubmit={handleSubmit}>
-                <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-                <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required />
-                <button type="submit">Login</button>
-            </form>
+        <div className={styles.container}>
+            <div className={styles.card}>
+                <h2 className={styles.heading}>Login</h2>
+                {error && <p className={styles.error}>{error}</p>}
+                <form onSubmit={handleSubmit} className={styles.form}>
+                    <input
+                        type="email"
+                        placeholder="Email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        required
+                        className={styles.input}
+                    />
+                    <input
+                        type="password"
+                        placeholder="Password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        required
+                        className={styles.input}
+                    />
+                    <button type="submit" className={styles.button}>
+                        Login
+                    </button>
+                </form>
+            </div>
         </div>
     );
 }

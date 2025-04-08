@@ -1,13 +1,25 @@
+// frontend/pages/Home.js
 import React from "react";
 import { Link } from "react-router-dom";
+import styles from "../styles/Home.module.css";
 
 function Home() {
     return (
-        <div>
-            <h1>Welcome to the AI-Powered Food Redistribution System</h1>
-            <p>Connect donors with NGOs to reduce food waste and help those in need.</p>
-            <Link to="/login"><button>Login</button></Link>
-            <Link to="/register"><button>Register</button></Link>
+        <div className={styles.container}>
+            <div className={styles.card}>
+                <h1 className={styles.heading}>AI-Powered Food Redistribution</h1>
+                <p className={styles.subheading}>
+                    Connecting donors and NGOs to reduce food waste and fight hunger.
+                </p>
+                <div className={styles.buttonGroup}>
+                    <Link to="/login">
+                        <button className={styles.button}>Login</button>
+                    </Link>
+                    <Link to="/register">
+                        <button className={styles.button}>Register</button>
+                    </Link>
+                </div>
+            </div>
         </div>
     );
 }

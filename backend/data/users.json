@@ -40,5 +40,12 @@
     "email": "v@gmail.com",
     "password": "$2b$10$2qPNpYvZYNOQwdaRwksDGO6msIRcS5NpIpclr/6Imoqv/2KGeeXqq",
     "role": "donor"
+  },
+  {
+    "id": 1744130640718,
+    "name": "john",
+    "email": "j@gmail.com",
+    "password": "$2b$10$6DoUv2sT9s0SH2tENO219uEctD0/EvBkXzX7aOUEoE0nIBZHFwHl6",
+    "role": "donor"
   }
 ]

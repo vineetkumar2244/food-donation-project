@@ -34,16 +34,22 @@ function NgoDashboard() {
                 method: "PUT",
                 headers: { Authorization: `Bearer ${token}` },
             });
-
+    
+            const result = await response.json();
+    
             if (response.ok) {
-                fetchFoodListings(); // Refresh listings after claiming
+                // Wait a small delay before fetching listings to ensure backend updates are complete
+                setTimeout(() => {
+                    fetchFoodListings(); // Refresh listings after successful claim and model run
+                }, 300); // 300ms delay should be enough
             } else {
-                console.error("Failed to claim food.");
+                console.error("Failed to claim food:", result.message);
             }
         } catch (error) {
             console.error("Error claiming food:", error);
         }
     };
+    
 
     const handleDownloadReport = async () => {
         try {

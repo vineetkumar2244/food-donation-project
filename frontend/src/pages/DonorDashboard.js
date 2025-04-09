@@ -112,7 +112,17 @@ function DonorDashboard() {
                 <input className={styles.input} type="text" placeholder="Food Item" value={foodItem} onChange={(e) => setFoodItem(e.target.value)} />
                 <input className={styles.input} type="number" placeholder="Quantity" value={quantity} onChange={(e) => setQuantity(e.target.value)} />
                 <input className={styles.input} type="text" placeholder="Pickup Location" value={pickupLocation} onChange={(e) => setPickupLocation(e.target.value)} />
-                <input className={styles.input} type="date" placeholder="Expiry Date" value={expiryDate} onChange={(e) => setExpiryDate(e.target.value)} />
+                <input
+                    className={styles.input}
+                    type="text"
+                    placeholder="Expiry Date"
+                    value={expiryDate}
+                    onChange={(e) => setExpiryDate(e.target.value)}
+                    onFocus={(e) => (e.target.type = "date")}
+                    onBlur={(e) => {
+                        if (!e.target.value) e.target.type = "text";
+                    }}
+                />
                 <button onClick={handleAddListing} className={styles.addButton}>Add Listing</button>
             </div>
 

@@ -97,3 +97,10 @@
     border-bottom: 1px solid #ddd;
   }
   
+  .label {
+    width: 80%;
+    text-align: left;
+    margin-top: 10px;
+    font-weight: 500;
+  }
+  

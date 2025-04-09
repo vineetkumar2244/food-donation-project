@@ -29,7 +29,7 @@ The platform is divided into two roles: Donors and NGOs. Donors can upload food 
 
 ### AI Features
 - Logistic Regression model (scikit-learn) predicts demand score for each listing using historical claim data.
-- Scores are updated automatically whenever listings are claimed.
+- Scores are updated automatically whenever listings are added or claimed.
 - Auto-sorting and labeling based on expiry dates.
 - Matplotlib + Pandas scripts generate statistical reports and visualizations.
 
@@ -103,4 +103,4 @@ This opens the React app at `http://localhost:3000`.
 * Donors can log in to add or manage listings.
 * NGOs can log in to view and claim listings.
 * Reports can be downloaded from the dashboard with one click.
-* AI scripts are automatically triggered when listings are claimed.
+* AI scripts are automatically triggered when listings are added or claimed.

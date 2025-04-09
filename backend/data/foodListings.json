@@ -3,370 +3,550 @@
     "id": 1743867744087,
     "donorId": 1742722559316,
     "foodItem": "rice",
-    "quantity": "10",
+    "quantity": 10,
     "pickupLocation": "agra",
     "expiryDate": "2025-04-11",
     "claimedBy": 1742722750804,
-    "demandScore": 85
+    "demandScore": 84.4,
+    "daysUntilExpiry": 1
   },
   {
     "id": 1743867759711,
     "donorId": 1742722559316,
     "foodItem": "rice",
-    "quantity": "13",
+    "quantity": 13,
     "pickupLocation": "delhi",
     "expiryDate": "2025-04-19",
     "claimedBy": 1742722750804,
-    "demandScore": 80.6
+    "demandScore": 77.2,
+    "daysUntilExpiry": 9
   },
   {
     "id": 1743867774879,
     "donorId": 1742722559316,
     "foodItem": "oranges",
-    "quantity": "10",
+    "quantity": 10,
     "pickupLocation": "agra",
     "expiryDate": "2025-04-23",
     "claimedBy": 1742722750804,
-    "demandScore": 79.8
+    "demandScore": 60.6,
+    "daysUntilExpiry": 13
   },
   {
     "id": 1743867808219,
     "donorId": 1742722053704,
     "foodItem": "rice",
-    "quantity": "15",
+    "quantity": 15,
     "pickupLocation": "jaipur",
     "expiryDate": "2025-04-17",
     "claimedBy": 1742722619552,
-    "demandScore": 78
+    "demandScore": 81.5,
+    "daysUntilExpiry": 7
   },
   {
     "id": 1743867819570,
     "donorId": 1742722053704,
     "foodItem": "apple",
-    "quantity": "10",
+    "quantity": 10,
     "pickupLocation": "agra",
     "expiryDate": "2025-04-23",
     "claimedBy": 1742722619552,
-    "demandScore": 31.1
+    "demandScore": 16,
+    "daysUntilExpiry": 13
   },
   {
     "id": 1743867870233,
     "donorId": 1742722053704,
     "foodItem": "rice",
-    "quantity": "19",
+    "quantity": 19,
     "pickupLocation": "agra",
     "expiryDate": "2025-04-17",
     "claimedBy": 1742722750804,
-    "demandScore": 85
+    "demandScore": 83.5,
+    "daysUntilExpiry": 7
   },
   {
     "id": 1743867944058,
     "donorId": 1742722053704,
     "foodItem": "rice",
-    "quantity": "15",
+    "quantity": 15,
     "pickupLocation": "delhi",
     "expiryDate": "2025-04-23",
     "claimedBy": 1742722750804,
-    "demandScore": 80.6
+    "demandScore": 72.9,
+    "daysUntilExpiry": 13
   },
   {
     "id": 1743867957825,
     "donorId": 1742722053704,
     "foodItem": "rice",
-    "quantity": "12",
+    "quantity": 12,
     "pickupLocation": "agra",
     "expiryDate": "2025-04-12",
     "claimedBy": 1742722750804,
-    "demandScore": 85
+    "demandScore": 84.5,
+    "daysUntilExpiry": 2
   },
   {
     "id": 1743867970605,
     "donorId": 1742722053704,
     "foodItem": "rice",
-    "quantity": "18",
+    "quantity": 18,
     "pickupLocation": "delhi",
     "expiryDate": "2025-04-25",
     "claimedBy": 1742722750804,
-    "demandScore": 80.6
+    "demandScore": 72.5,
+    "daysUntilExpiry": 15
   },
   {
     "id": 1743868025252,
     "donorId": 1742722559316,
     "foodItem": "rice",
-    "quantity": "17",
+    "quantity": 17,
     "pickupLocation": "agra",
     "expiryDate": "2025-04-29",
     "claimedBy": 1742722750804,
-    "demandScore": 85
+    "demandScore": 64,
+    "daysUntilExpiry": 19
   },
   {
     "id": 1743868111081,
     "donorId": 1742722559316,
     "foodItem": "rice",
-    "quantity": "11",
+    "quantity": 11,
     "pickupLocation": "agra",
     "expiryDate": "2025-04-11",
     "claimedBy": 1742722750804,
-    "demandScore": 85
+    "demandScore": 85,
+    "daysUntilExpiry": 1
   },
   {
     "id": 1743872209959,
     "donorId": 1742722559316,
     "foodItem": "oranges",
-    "quantity": "12",
+    "quantity": 12,
     "pickupLocation": "jaipur",
     "expiryDate": "2025-04-16",
     "claimedBy": 1742722750804,
-    "demandScore": 71.2
+    "demandScore": 75.6,
+    "daysUntilExpiry": 6
   },
   {
     "id": 1743873709263,
     "donorId": 1742722559316,
     "foodItem": "rice ",
-    "quantity": "22",
+    "quantity": 22,
     "pickupLocation": "agra",
     "expiryDate": "2025-04-24",
     "claimedBy": 1742722750804,
-    "demandScore": 89
+    "demandScore": 81.7,
+    "daysUntilExpiry": 14
   },
   {
     "id": 1743873831063,
     "donorId": 1742722559316,
     "foodItem": "rice",
-    "quantity": "12",
+    "quantity": 12,
     "pickupLocation": "delhi",
     "expiryDate": "2025-04-17",
     "claimedBy": 1742722750804,
-    "demandScore": 80.6
+    "demandScore": 79.1,
+    "daysUntilExpiry": 7
   },
   {
     "id": 1743942597760,
     "donorId": 1742722559316,
     "foodItem": "oats",
-    "quantity": "33",
+    "quantity": 33,
     "pickupLocation": "lucknow",
     "expiryDate": "2025-04-10",
     "claimedBy": 1742722750804,
-    "demandScore": 55.8
+    "demandScore": 90.9,
+    "daysUntilExpiry": 0
   },
   {
     "id": 1744019414935,
     "donorId": 1742722053704,
     "foodItem": "cookies",
-    "quantity": "30",
+    "quantity": 30,
     "pickupLocation": "surat",
     "expiryDate": "2025-04-30",
     "claimedBy": 1742722619552,
-    "demandScore": 23.8
+    "demandScore": 43,
+    "daysUntilExpiry": 20
   },
   {
     "id": 1744094565515,
     "donorId": 1742722559316,
     "foodItem": "tea",
-    "quantity": "9",
+    "quantity": 9,
     "pickupLocation": "delhi",
     "expiryDate": "2025-04-16",
     "claimedBy": 1742722619552,
-    "demandScore": 89.5
+    "demandScore": 86.7,
+    "daysUntilExpiry": 6
   },
   {
     "id": 1744094591015,
     "donorId": 1742722559316,
     "foodItem": "grapes",
-    "quantity": "20",
+    "quantity": 20,
     "pickupLocation": "delhi",
     "expiryDate": "2025-04-12",
     "claimedBy": 1742722619552,
-    "demandScore": 58.4
+    "demandScore": 76.8,
+    "daysUntilExpiry": 2
   },
   {
     "id": 1744094993073,
     "donorId": 1742722559316,
     "foodItem": "grapes",
-    "quantity": "12",
+    "quantity": 12,
     "pickupLocation": "agra",
     "expiryDate": "2025-04-16",
     "claimedBy": 1742722619552,
-    "demandScore": 65.7
+    "demandScore": 61.8,
+    "daysUntilExpiry": 6
   },
   {
     "id": 1744095010021,
     "donorId": 1742722559316,
     "foodItem": "oranges",
-    "quantity": "13",
+    "quantity": 13,
     "pickupLocation": "lucknow",
     "expiryDate": "2025-04-11",
     "claimedBy": 1742722619552,
-    "demandScore": 64.4
+    "demandScore": 83.2,
+    "daysUntilExpiry": 1
   },
   {
     "id": 1744130822796,
     "donorId": 1742722559316,
     "foodItem": "fish",
-    "quantity": "20",
+    "quantity": 20,
     "pickupLocation": "chennai",
     "expiryDate": "2025-04-11",
-    "claimedBy": 1742722750804,
-    "demandScore": 53.3
+    "claimedBy": null,
+    "demandScore": 72.4,
+    "daysUntilExpiry": 1
   },
   {
     "id": 1744131330105,
     "donorId": 1742722559316,
     "foodItem": "fish",
-    "quantity": "11",
+    "quantity": 11,
     "pickupLocation": "chennai",
     "expiryDate": "2025-04-13",
-    "claimedBy": 1742722619552,
-    "demandScore": 53.3
+    "claimedBy": null,
+    "demandScore": 59.7,
+    "daysUntilExpiry": 3
   },
   {
     "id": 1744179631229,
     "donorId": 1742722559316,
     "foodItem": "fish",
-    "quantity": "12",
+    "quantity": 12,
     "pickupLocation": "chennai",
     "expiryDate": "2025-04-12",
-    "claimedBy": 1742722750804,
-    "demandScore": 53.3
+    "claimedBy": null,
+    "demandScore": 62.7,
+    "daysUntilExpiry": 2
   },
   {
     "id": 1744190661341,
     "donorId": 1742722559316,
     "foodItem": "cookies",
-    "quantity": "10",
+    "quantity": 10,
     "pickupLocation": "delhi",
     "expiryDate": "2025-05-01",
     "claimedBy": null,
-    "demandScore": 40.5
+    "demandScore": 20.3,
+    "daysUntilExpiry": 21
   },
   {
     "id": 1744195140705,
     "donorId": 1742722559316,
     "foodItem": "rice",
-    "quantity": "20",
+    "quantity": 20,
     "pickupLocation": "agra",
     "expiryDate": "2025-04-26",
-    "claimedBy": null,
-    "demandScore": 85
+    "claimedBy": 1742722750804,
+    "demandScore": 72.1,
+    "daysUntilExpiry": 16
   },
   {
     "id": 1744195160860,
     "donorId": 1742722559316,
     "foodItem": "apple",
-    "quantity": "12",
+    "quantity": 12,
     "pickupLocation": "delhi",
     "expiryDate": "2025-04-17",
     "claimedBy": null,
-    "demandScore": 24.9
+    "demandScore": 25.7,
+    "daysUntilExpiry": 7
   },
   {
     "id": 1744195178458,
     "donorId": 1742722559316,
     "foodItem": "fish",
-    "quantity": "22",
+    "quantity": 22,
     "pickupLocation": "chennai",
     "expiryDate": "2025-04-12",
-    "claimedBy": null,
-    "demandScore": 53.3
+    "claimedBy": 1742722750804,
+    "demandScore": 72.6,
+    "daysUntilExpiry": 2
   },
   {
     "id": 1744195196528,
     "donorId": 1742722559316,
     "foodItem": "chicken",
-    "quantity": "14",
+    "quantity": 14,
     "pickupLocation": "kolkata",
     "expiryDate": "2025-04-13",
-    "claimedBy": null,
-    "demandScore": 25.8
+    "claimedBy": 1742722750804,
+    "demandScore": 49.5,
+    "daysUntilExpiry": 3
   },
   {
     "id": 1744195654472,
     "donorId": 1742722559316,
     "foodItem": "grapes",
-    "quantity": "11",
+    "quantity": 11,
     "pickupLocation": "jaipur",
     "expiryDate": "2025-04-14",
     "claimedBy": null,
-    "demandScore": 54.6
+    "demandScore": 65.6,
+    "daysUntilExpiry": 4
   },
   {
     "id": 1744195701213,
     "donorId": 1742722559316,
     "foodItem": "fish",
-    "quantity": "21",
+    "quantity": 21,
     "pickupLocation": "kolkata",
     "expiryDate": "2025-04-11",
-    "claimedBy": null,
-    "demandScore": 41.7
+    "claimedBy": 1742722750804,
+    "demandScore": 74.2,
+    "daysUntilExpiry": 1
   },
   {
     "id": 1744195739771,
     "donorId": 1742722559316,
     "foodItem": "rice",
-    "quantity": "17",
+    "quantity": 17,
     "pickupLocation": "delhi",
     "expiryDate": "2025-05-07",
-    "claimedBy": null,
-    "demandScore": 80.6
+    "claimedBy": 1742722750804,
+    "demandScore": 49.2,
+    "daysUntilExpiry": 27
   },
   {
     "id": 1744195777686,
     "donorId": 1742722053704,
     "foodItem": "fish",
-    "quantity": "12",
+    "quantity": 12,
     "pickupLocation": "chennai",
     "expiryDate": "2025-04-14",
     "claimedBy": null,
-    "demandScore": 53.3
+    "demandScore": 58.9,
+    "daysUntilExpiry": 4
   },
   {
     "id": 1744195792380,
     "donorId": 1742722053704,
     "foodItem": "chicken",
-    "quantity": "20",
+    "quantity": 20,
     "pickupLocation": "kolkata",
     "expiryDate": "2025-04-15",
-    "claimedBy": null,
-    "demandScore": 25.8
+    "claimedBy": 1742722619552,
+    "demandScore": 52.3,
+    "daysUntilExpiry": 5
   },
   {
     "id": 1744195805903,
     "donorId": 1742722053704,
     "foodItem": "rice",
-    "quantity": "21",
+    "quantity": 21,
     "pickupLocation": "agra",
     "expiryDate": "2025-05-10",
     "claimedBy": null,
-    "demandScore": 85
+    "demandScore": 47,
+    "daysUntilExpiry": 30
   },
   {
     "id": 1744195832556,
     "donorId": 1742722053704,
     "foodItem": "cookies",
-    "quantity": "20",
+    "quantity": 20,
     "pickupLocation": "lucknow",
     "expiryDate": "2025-05-09",
     "claimedBy": null,
-    "demandScore": 29.9
+    "demandScore": 18.3,
+    "daysUntilExpiry": 29
   },
   {
     "id": 1744195856626,
     "donorId": 1742722053704,
     "foodItem": "apple",
-    "quantity": "21",
+    "quantity": 21,
     "pickupLocation": "delhi",
     "expiryDate": "2025-04-23",
     "claimedBy": null,
-    "demandScore": 24.9
+    "demandScore": 24.5,
+    "daysUntilExpiry": 13
   },
   {
     "id": 1744195903039,
     "donorId": 1742722053704,
     "foodItem": "oranges",
-    "quantity": "11",
+    "quantity": 11,
     "pickupLocation": "nagpur",
     "expiryDate": "2025-04-24",
     "claimedBy": null,
-    "demandScore": 60.8
+    "demandScore": 62.5,
+    "daysUntilExpiry": 14
+  },
+  {
+    "id": 1744197649993,
+    "donorId": 1742722559316,
+    "foodItem": "rice",
+    "quantity": "21",
+    "pickupLocation": "chennai",
+    "expiryDate": "2025-05-07",
+    "claimedBy": null,
+    "demandScore": 53.4,
+    "daysUntilExpiry": 27
+  },
+  {
+    "id": 1744197699173,
+    "donorId": 1742722559316,
+    "foodItem": "rice",
+    "quantity": "21",
+    "pickupLocation": "chennai",
+    "expiryDate": "2025-05-07",
+    "claimedBy": 1742722750804,
+    "demandScore": 53.4,
+    "daysUntilExpiry": 27
+  },
+  {
+    "id": 1744197714909,
+    "donorId": 1742722559316,
+    "foodItem": "rice",
+    "quantity": "21",
+    "pickupLocation": "chennai",
+    "expiryDate": "2025-05-06",
+    "claimedBy": 1742722750804,
+    "demandScore": 55.4,
+    "daysUntilExpiry": 26
+  },
+  {
+    "id": 1744197750662,
+    "donorId": 1742722559316,
+    "foodItem": "rice",
+    "quantity": "11",
+    "pickupLocation": "chennai",
+    "expiryDate": "2025-05-06",
+    "claimedBy": null,
+    "demandScore": 44,
+    "daysUntilExpiry": 26
+  },
+  {
+    "id": 1744201152107,
+    "donorId": 1742722559316,
+    "foodItem": "rice",
+    "quantity": "11",
+    "pickupLocation": "chennai",
+    "expiryDate": "2025-05-06",
+    "claimedBy": null,
+    "demandScore": 44,
+    "daysUntilExpiry": 26
+  },
+  {
+    "id": 1744201286282,
+    "donorId": 1742722559316,
+    "foodItem": "rice",
+    "quantity": "21",
+    "pickupLocation": "chennai",
+    "expiryDate": "2025-05-02",
+    "claimedBy": null,
+    "demandScore": 63,
+    "daysUntilExpiry": 22
+  },
+  {
+    "id": 1744201311085,
+    "donorId": 1742722559316,
+    "foodItem": "cookies",
+    "quantity": "30",
+    "pickupLocation": "chennai",
+    "expiryDate": "2025-05-08",
+    "claimedBy": null,
+    "demandScore": 26.4,
+    "daysUntilExpiry": 28
+  },
+  {
+    "id": 1744201423105,
+    "donorId": 1742722053704,
+    "foodItem": "banana",
+    "quantity": "22",
+    "pickupLocation": "chennai",
+    "expiryDate": "2025-04-16",
+    "claimedBy": null,
+    "demandScore": 44,
+    "daysUntilExpiry": 6
+  },
+  {
+    "id": 1744202251828,
+    "donorId": 1742722559316,
+    "foodItem": "grapes",
+    "quantity": "22",
+    "pickupLocation": "mumbai",
+    "expiryDate": "2025-04-17",
+    "claimedBy": null,
+    "demandScore": 72.2,
+    "daysUntilExpiry": 7
+  },
+  {
+    "id": 1744202269350,
+    "donorId": 1742722559316,
+    "foodItem": "apple",
+    "quantity": "8",
+    "pickupLocation": "delhi",
+    "expiryDate": "2025-04-15",
+    "claimedBy": null,
+    "demandScore": 25.3,
+    "daysUntilExpiry": 5
+  },
+  {
+    "id": 1744202314403,
+    "donorId": 1742722559316,
+    "foodItem": "rice",
+    "quantity": "9",
+    "pickupLocation": "chennai",
+    "expiryDate": "2025-05-10",
+    "claimedBy": null,
+    "demandScore": 34.3,
+    "daysUntilExpiry": 30
+  },
+  {
+    "id": 1744202610064,
+    "donorId": 1742722053704,
+    "foodItem": "apple",
+    "quantity": "21",
+    "pickupLocation": "delhi",
+    "expiryDate": "2025-04-23",
+    "claimedBy": 1742722750804,
+    "demandScore": 24.5,
+    "daysUntilExpiry": 13
+  },
+  {
+    "id": 1744203386007,
+    "donorId": 1742722559316,
+    "foodItem": "oranges",
+    "quantity": "22",
+    "pickupLocation": "lucknow",
+    "expiryDate": "2025-04-27",
+    "claimedBy": null,
+    "demandScore": 67.7,
+    "daysUntilExpiry": 17
   }
 ]

@@ -7,7 +7,7 @@
     "pickupLocation": "agra",
     "expiryDate": "2025-04-11",
     "claimedBy": 1742722750804,
-    "demandScore": 99.5
+    "demandScore": 85
   },
   {
     "id": 1743867759711,
@@ -17,7 +17,7 @@
     "pickupLocation": "delhi",
     "expiryDate": "2025-04-19",
     "claimedBy": 1742722750804,
-    "demandScore": 99.4
+    "demandScore": 80.6
   },
   {
     "id": 1743867774879,
@@ -27,7 +27,7 @@
     "pickupLocation": "agra",
     "expiryDate": "2025-04-23",
     "claimedBy": 1742722750804,
-    "demandScore": 99.1
+    "demandScore": 79.8
   },
   {
     "id": 1743867808219,
@@ -37,7 +37,7 @@
     "pickupLocation": "jaipur",
     "expiryDate": "2025-04-17",
     "claimedBy": 1742722619552,
-    "demandScore": 99.3
+    "demandScore": 78
   },
   {
     "id": 1743867819570,
@@ -47,7 +47,7 @@
     "pickupLocation": "agra",
     "expiryDate": "2025-04-23",
     "claimedBy": 1742722619552,
-    "demandScore": 77.8
+    "demandScore": 31.1
   },
   {
     "id": 1743867870233,
@@ -57,7 +57,7 @@
     "pickupLocation": "agra",
     "expiryDate": "2025-04-17",
     "claimedBy": 1742722750804,
-    "demandScore": 99.5
+    "demandScore": 85
   },
   {
     "id": 1743867944058,
@@ -67,7 +67,7 @@
     "pickupLocation": "delhi",
     "expiryDate": "2025-04-23",
     "claimedBy": 1742722750804,
-    "demandScore": 99.4
+    "demandScore": 80.6
   },
   {
     "id": 1743867957825,
@@ -77,7 +77,7 @@
     "pickupLocation": "agra",
     "expiryDate": "2025-04-12",
     "claimedBy": 1742722750804,
-    "demandScore": 99.5
+    "demandScore": 85
   },
   {
     "id": 1743867970605,
@@ -87,7 +87,7 @@
     "pickupLocation": "delhi",
     "expiryDate": "2025-04-25",
     "claimedBy": 1742722750804,
-    "demandScore": 99.4
+    "demandScore": 80.6
   },
   {
     "id": 1743868025252,
@@ -97,7 +97,7 @@
     "pickupLocation": "agra",
     "expiryDate": "2025-04-29",
     "claimedBy": 1742722750804,
-    "demandScore": 99.5
+    "demandScore": 85
   },
   {
     "id": 1743868111081,
@@ -107,7 +107,7 @@
     "pickupLocation": "agra",
     "expiryDate": "2025-04-11",
     "claimedBy": 1742722750804,
-    "demandScore": 99.5
+    "demandScore": 85
   },
   {
     "id": 1743872209959,
@@ -117,7 +117,7 @@
     "pickupLocation": "jaipur",
     "expiryDate": "2025-04-16",
     "claimedBy": 1742722750804,
-    "demandScore": 98.7
+    "demandScore": 71.2
   },
   {
     "id": 1743873709263,
@@ -127,7 +127,7 @@
     "pickupLocation": "agra",
     "expiryDate": "2025-04-24",
     "claimedBy": 1742722750804,
-    "demandScore": 99.8
+    "demandScore": 89
   },
   {
     "id": 1743873831063,
@@ -137,7 +137,7 @@
     "pickupLocation": "delhi",
     "expiryDate": "2025-04-17",
     "claimedBy": 1742722750804,
-    "demandScore": 99.4
+    "demandScore": 80.6
   },
   {
     "id": 1743942597760,
@@ -147,7 +147,7 @@
     "pickupLocation": "lucknow",
     "expiryDate": "2025-04-10",
     "claimedBy": 1742722750804,
-    "demandScore": 97.2
+    "demandScore": 55.8
   },
   {
     "id": 1744019414935,
@@ -157,7 +157,7 @@
     "pickupLocation": "surat",
     "expiryDate": "2025-04-30",
     "claimedBy": 1742722619552,
-    "demandScore": 80.1
+    "demandScore": 23.8
   },
   {
     "id": 1744094565515,
@@ -167,7 +167,7 @@
     "pickupLocation": "delhi",
     "expiryDate": "2025-04-16",
     "claimedBy": 1742722619552,
-    "demandScore": 99.8
+    "demandScore": 89.5
   },
   {
     "id": 1744094591015,
@@ -177,7 +177,7 @@
     "pickupLocation": "delhi",
     "expiryDate": "2025-04-12",
     "claimedBy": 1742722619552,
-    "demandScore": 95.6
+    "demandScore": 58.4
   },
   {
     "id": 1744094993073,
@@ -187,7 +187,7 @@
     "pickupLocation": "agra",
     "expiryDate": "2025-04-16",
     "claimedBy": 1742722619552,
-    "demandScore": 96.4
+    "demandScore": 65.7
   },
   {
     "id": 1744095010021,
@@ -197,7 +197,7 @@
     "pickupLocation": "lucknow",
     "expiryDate": "2025-04-11",
     "claimedBy": 1742722619552,
-    "demandScore": 98.6
+    "demandScore": 64.4
   },
   {
     "id": 1744130822796,
@@ -207,7 +207,7 @@
     "pickupLocation": "chennai",
     "expiryDate": "2025-04-11",
     "claimedBy": 1742722750804,
-    "demandScore": 92.5
+    "demandScore": 53.3
   },
   {
     "id": 1744131330105,
@@ -217,7 +217,7 @@
     "pickupLocation": "chennai",
     "expiryDate": "2025-04-13",
     "claimedBy": 1742722619552,
-    "demandScore": 92.5
+    "demandScore": 53.3
   },
   {
     "id": 1744179631229,
@@ -227,7 +227,7 @@
     "pickupLocation": "chennai",
     "expiryDate": "2025-04-12",
     "claimedBy": 1742722750804,
-    "demandScore": 92.5
+    "demandScore": 53.3
   },
   {
     "id": 1744190661341,
@@ -237,6 +237,136 @@
     "pickupLocation": "delhi",
     "expiryDate": "2025-05-01",
     "claimedBy": null,
-    "demandScore": 84.8
+    "demandScore": 40.5
+  },
+  {
+    "id": 1744195140705,
+    "donorId": 1742722559316,
+    "foodItem": "rice",
+    "quantity": "20",
+    "pickupLocation": "agra",
+    "expiryDate": "2025-04-26",
+    "claimedBy": null,
+    "demandScore": 85
+  },
+  {
+    "id": 1744195160860,
+    "donorId": 1742722559316,
+    "foodItem": "apple",
+    "quantity": "12",
+    "pickupLocation": "delhi",
+    "expiryDate": "2025-04-17",
+    "claimedBy": null,
+    "demandScore": 24.9
+  },
+  {
+    "id": 1744195178458,
+    "donorId": 1742722559316,
+    "foodItem": "fish",
+    "quantity": "22",
+    "pickupLocation": "chennai",
+    "expiryDate": "2025-04-12",
+    "claimedBy": null,
+    "demandScore": 53.3
+  },
+  {
+    "id": 1744195196528,
+    "donorId": 1742722559316,
+    "foodItem": "chicken",
+    "quantity": "14",
+    "pickupLocation": "kolkata",
+    "expiryDate": "2025-04-13",
+    "claimedBy": null,
+    "demandScore": 25.8
+  },
+  {
+    "id": 1744195654472,
+    "donorId": 1742722559316,
+    "foodItem": "grapes",
+    "quantity": "11",
+    "pickupLocation": "jaipur",
+    "expiryDate": "2025-04-14",
+    "claimedBy": null,
+    "demandScore": 54.6
+  },
+  {
+    "id": 1744195701213,
+    "donorId": 1742722559316,
+    "foodItem": "fish",
+    "quantity": "21",
+    "pickupLocation": "kolkata",
+    "expiryDate": "2025-04-11",
+    "claimedBy": null,
+    "demandScore": 41.7
+  },
+  {
+    "id": 1744195739771,
+    "donorId": 1742722559316,
+    "foodItem": "rice",
+    "quantity": "17",
+    "pickupLocation": "delhi",
+    "expiryDate": "2025-05-07",
+    "claimedBy": null,
+    "demandScore": 80.6
+  },
+  {
+    "id": 1744195777686,
+    "donorId": 1742722053704,
+    "foodItem": "fish",
+    "quantity": "12",
+    "pickupLocation": "chennai",
+    "expiryDate": "2025-04-14",
+    "claimedBy": null,
+    "demandScore": 53.3
+  },
+  {
+    "id": 1744195792380,
+    "donorId": 1742722053704,
+    "foodItem": "chicken",
+    "quantity": "20",
+    "pickupLocation": "kolkata",
+    "expiryDate": "2025-04-15",
+    "claimedBy": null,
+    "demandScore": 25.8
+  },
+  {
+    "id": 1744195805903,
+    "donorId": 1742722053704,
+    "foodItem": "rice",
+    "quantity": "21",
+    "pickupLocation": "agra",
+    "expiryDate": "2025-05-10",
+    "claimedBy": null,
+    "demandScore": 85
+  },
+  {
+    "id": 1744195832556,
+    "donorId": 1742722053704,
+    "foodItem": "cookies",
+    "quantity": "20",
+    "pickupLocation": "lucknow",
+    "expiryDate": "2025-05-09",
+    "claimedBy": null,
+    "demandScore": 29.9
+  },
+  {
+    "id": 1744195856626,
+    "donorId": 1742722053704,
+    "foodItem": "apple",
+    "quantity": "21",
+    "pickupLocation": "delhi",
+    "expiryDate": "2025-04-23",
+    "claimedBy": null,
+    "demandScore": 24.9
+  },
+  {
+    "id": 1744195903039,
+    "donorId": 1742722053704,
+    "foodItem": "oranges",
+    "quantity": "11",
+    "pickupLocation": "nagpur",
+    "expiryDate": "2025-04-24",
+    "claimedBy": null,
+    "demandScore": 60.8
   }
 ]

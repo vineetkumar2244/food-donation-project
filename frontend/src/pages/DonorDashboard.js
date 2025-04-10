@@ -149,6 +149,8 @@ function DonorDashboard() {
                     {claimedListings.map((listing) => (
                         <li key={listing.id}>
                             {listing.foodItem} - {listing.quantity} (Claimed)
+                            <br />
+                            <strong>Claimed By:</strong> {listing.ngoName} – {listing.ngoEmail}
                         </li>
                     ))}
                 </ul>

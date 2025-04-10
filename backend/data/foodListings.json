@@ -6,9 +6,9 @@
     "quantity": 10,
     "pickupLocation": "agra",
     "expiryDate": "2025-04-11",
-    "claimedBy": 1742722750804,
-    "demandScore": 84.4,
-    "daysUntilExpiry": 1
+    "claimedBy": 1742722750804.0,
+    "demandScore": 79.2,
+    "daysUntilExpiry": 0
   },
   {
     "id": 1743867759711,
@@ -17,9 +17,9 @@
     "quantity": 13,
     "pickupLocation": "delhi",
     "expiryDate": "2025-04-19",
-    "claimedBy": 1742722750804,
-    "demandScore": 77.2,
-    "daysUntilExpiry": 9
+    "claimedBy": 1742722750804.0,
+    "demandScore": 70.9,
+    "daysUntilExpiry": 8
   },
   {
     "id": 1743867774879,
@@ -28,9 +28,9 @@
     "quantity": 10,
     "pickupLocation": "agra",
     "expiryDate": "2025-04-23",
-    "claimedBy": 1742722750804,
-    "demandScore": 60.6,
-    "daysUntilExpiry": 13
+    "claimedBy": 1742722750804.0,
+    "demandScore": 55.0,
+    "daysUntilExpiry": 12
   },
   {
     "id": 1743867808219,
@@ -39,9 +39,9 @@
     "quantity": 15,
     "pickupLocation": "jaipur",
     "expiryDate": "2025-04-17",
-    "claimedBy": 1742722619552,
-    "demandScore": 81.5,
-    "daysUntilExpiry": 7
+    "claimedBy": 1742722619552.0,
+    "demandScore": 76.1,
+    "daysUntilExpiry": 6
   },
   {
     "id": 1743867819570,
@@ -50,9 +50,9 @@
     "quantity": 10,
     "pickupLocation": "agra",
     "expiryDate": "2025-04-23",
-    "claimedBy": 1742722619552,
-    "demandScore": 16,
-    "daysUntilExpiry": 13
+    "claimedBy": 1742722619552.0,
+    "demandScore": 14.8,
+    "daysUntilExpiry": 12
   },
   {
     "id": 1743867870233,
@@ -61,9 +61,9 @@
     "quantity": 19,
     "pickupLocation": "agra",
     "expiryDate": "2025-04-17",
-    "claimedBy": 1742722750804,
-    "demandScore": 83.5,
-    "daysUntilExpiry": 7
+    "claimedBy": 1742722750804.0,
+    "demandScore": 92.3,
+    "daysUntilExpiry": 6
   },
   {
     "id": 1743867944058,
@@ -72,9 +72,9 @@
     "quantity": 15,
     "pickupLocation": "delhi",
     "expiryDate": "2025-04-23",
-    "claimedBy": 1742722750804,
-    "demandScore": 72.9,
-    "daysUntilExpiry": 13
+    "claimedBy": 1742722750804.0,
+    "demandScore": 72.4,
+    "daysUntilExpiry": 12
   },
   {
     "id": 1743867957825,
@@ -83,9 +83,9 @@
     "quantity": 12,
     "pickupLocation": "agra",
     "expiryDate": "2025-04-12",
-    "claimedBy": 1742722750804,
-    "demandScore": 84.5,
-    "daysUntilExpiry": 2
+    "claimedBy": 1742722750804.0,
+    "demandScore": 83.4,
+    "daysUntilExpiry": 1
   },
   {
     "id": 1743867970605,
@@ -94,9 +94,9 @@
     "quantity": 18,
     "pickupLocation": "delhi",
     "expiryDate": "2025-04-25",
-    "claimedBy": 1742722750804,
-    "demandScore": 72.5,
-    "daysUntilExpiry": 15
+    "claimedBy": 1742722750804.0,
+    "demandScore": 79.4,
+    "daysUntilExpiry": 14
   },
   {
     "id": 1743868025252,
@@ -105,9 +105,9 @@
     "quantity": 17,
     "pickupLocation": "agra",
     "expiryDate": "2025-04-29",
-    "claimedBy": 1742722750804,
-    "demandScore": 64,
-    "daysUntilExpiry": 19
+    "claimedBy": 1742722750804.0,
+    "demandScore": 79.1,
+    "daysUntilExpiry": 18
   },
   {
     "id": 1743868111081,
@@ -116,9 +116,9 @@
     "quantity": 11,
     "pickupLocation": "agra",
     "expiryDate": "2025-04-11",
-    "claimedBy": 1742722750804,
-    "demandScore": 85,
-    "daysUntilExpiry": 1
+    "claimedBy": 1742722750804.0,
+    "demandScore": 81.9,
+    "daysUntilExpiry": 0
   },
   {
     "id": 1743872209959,
@@ -127,9 +127,9 @@
     "quantity": 12,
     "pickupLocation": "jaipur",
     "expiryDate": "2025-04-16",
-    "claimedBy": 1742722750804,
-    "demandScore": 75.6,
-    "daysUntilExpiry": 6
+    "claimedBy": 1742722750804.0,
+    "demandScore": 59.4,
+    "daysUntilExpiry": 5
   },
   {
     "id": 1743873709263,
@@ -138,9 +138,9 @@
     "quantity": 22,
     "pickupLocation": "agra",
     "expiryDate": "2025-04-24",
-    "claimedBy": 1742722750804,
-    "demandScore": 81.7,
-    "daysUntilExpiry": 14
+    "claimedBy": 1742722750804.0,
+    "demandScore": 94.6,
+    "daysUntilExpiry": 13
   },
   {
     "id": 1743873831063,
@@ -149,20 +149,9 @@
     "quantity": 12,
     "pickupLocation": "delhi",
     "expiryDate": "2025-04-17",
-    "claimedBy": 1742722750804,
-    "demandScore": 79.1,
-    "daysUntilExpiry": 7
-  },
-  {
-    "id": 1743942597760,
-    "donorId": 1742722559316,
-    "foodItem": "oats",
-    "quantity": 33,
-    "pickupLocation": "lucknow",
-    "expiryDate": "2025-04-10",
-    "claimedBy": 1742722750804,
-    "demandScore": 90.9,
-    "daysUntilExpiry": 0
+    "claimedBy": 1742722750804.0,
+    "demandScore": 70.1,
+    "daysUntilExpiry": 6
   },
   {
     "id": 1744019414935,
@@ -171,9 +160,9 @@
     "quantity": 30,
     "pickupLocation": "surat",
     "expiryDate": "2025-04-30",
-    "claimedBy": 1742722619552,
-    "demandScore": 43,
-    "daysUntilExpiry": 20
+    "claimedBy": 1742722619552.0,
+    "demandScore": 62.2,
+    "daysUntilExpiry": 19
   },
   {
     "id": 1744094565515,
@@ -182,9 +171,9 @@
     "quantity": 9,
     "pickupLocation": "delhi",
     "expiryDate": "2025-04-16",
-    "claimedBy": 1742722619552,
-    "demandScore": 86.7,
-    "daysUntilExpiry": 6
+    "claimedBy": 1742722619552.0,
+    "demandScore": 74.1,
+    "daysUntilExpiry": 5
   },
   {
     "id": 1744094591015,
@@ -193,9 +182,9 @@
     "quantity": 20,
     "pickupLocation": "delhi",
     "expiryDate": "2025-04-12",
-    "claimedBy": 1742722619552,
-    "demandScore": 76.8,
-    "daysUntilExpiry": 2
+    "claimedBy": 1742722619552.0,
+    "demandScore": 87.2,
+    "daysUntilExpiry": 1
   },
   {
     "id": 1744094993073,
@@ -204,9 +193,9 @@
     "quantity": 12,
     "pickupLocation": "agra",
     "expiryDate": "2025-04-16",
-    "claimedBy": 1742722619552,
-    "demandScore": 61.8,
-    "daysUntilExpiry": 6
+    "claimedBy": 1742722619552.0,
+    "demandScore": 66.7,
+    "daysUntilExpiry": 5
   },
   {
     "id": 1744095010021,
@@ -215,9 +204,9 @@
     "quantity": 13,
     "pickupLocation": "lucknow",
     "expiryDate": "2025-04-11",
-    "claimedBy": 1742722619552,
-    "demandScore": 83.2,
-    "daysUntilExpiry": 1
+    "claimedBy": 1742722619552.0,
+    "demandScore": 61.3,
+    "daysUntilExpiry": 0
   },
   {
     "id": 1744130822796,
@@ -226,9 +215,9 @@
     "quantity": 20,
     "pickupLocation": "chennai",
     "expiryDate": "2025-04-11",
-    "claimedBy": null,
-    "demandScore": 72.4,
-    "daysUntilExpiry": 1
+    "claimedBy": 1742722750804.0,
+    "demandScore": 86.7,
+    "daysUntilExpiry": 0
   },
   {
     "id": 1744131330105,
@@ -238,8 +227,8 @@
     "pickupLocation": "chennai",
     "expiryDate": "2025-04-13",
     "claimedBy": null,
-    "demandScore": 59.7,
-    "daysUntilExpiry": 3
+    "demandScore": 54.6,
+    "daysUntilExpiry": 2
   },
   {
     "id": 1744179631229,
@@ -249,8 +238,8 @@
     "pickupLocation": "chennai",
     "expiryDate": "2025-04-12",
     "claimedBy": null,
-    "demandScore": 62.7,
-    "daysUntilExpiry": 2
+    "demandScore": 60.5,
+    "daysUntilExpiry": 1
   },
   {
     "id": 1744190661341,
@@ -260,8 +249,8 @@
     "pickupLocation": "delhi",
     "expiryDate": "2025-05-01",
     "claimedBy": null,
-    "demandScore": 20.3,
-    "daysUntilExpiry": 21
+    "demandScore": 14.9,
+    "daysUntilExpiry": 20
   },
   {
     "id": 1744195140705,
@@ -270,9 +259,9 @@
     "quantity": 20,
     "pickupLocation": "agra",
     "expiryDate": "2025-04-26",
-    "claimedBy": 1742722750804,
-    "demandScore": 72.1,
-    "daysUntilExpiry": 16
+    "claimedBy": 1742722750804.0,
+    "demandScore": 88.6,
+    "daysUntilExpiry": 15
   },
   {
     "id": 1744195160860,
@@ -282,8 +271,8 @@
     "pickupLocation": "delhi",
     "expiryDate": "2025-04-17",
     "claimedBy": null,
-    "demandScore": 25.7,
-    "daysUntilExpiry": 7
+    "demandScore": 19.3,
+    "daysUntilExpiry": 6
   },
   {
     "id": 1744195178458,
@@ -292,9 +281,9 @@
     "quantity": 22,
     "pickupLocation": "chennai",
     "expiryDate": "2025-04-12",
-    "claimedBy": 1742722750804,
-    "demandScore": 72.6,
-    "daysUntilExpiry": 2
+    "claimedBy": 1742722750804.0,
+    "demandScore": 89.6,
+    "daysUntilExpiry": 1
   },
   {
     "id": 1744195196528,
@@ -303,9 +292,9 @@
     "quantity": 14,
     "pickupLocation": "kolkata",
     "expiryDate": "2025-04-13",
-    "claimedBy": 1742722750804,
-    "demandScore": 49.5,
-    "daysUntilExpiry": 3
+    "claimedBy": 1742722750804.0,
+    "demandScore": 35.7,
+    "daysUntilExpiry": 2
   },
   {
     "id": 1744195654472,
@@ -315,8 +304,8 @@
     "pickupLocation": "jaipur",
     "expiryDate": "2025-04-14",
     "claimedBy": null,
-    "demandScore": 65.6,
-    "daysUntilExpiry": 4
+    "demandScore": 50.4,
+    "daysUntilExpiry": 3
   },
   {
     "id": 1744195701213,
@@ -325,9 +314,9 @@
     "quantity": 21,
     "pickupLocation": "kolkata",
     "expiryDate": "2025-04-11",
-    "claimedBy": 1742722750804,
-    "demandScore": 74.2,
-    "daysUntilExpiry": 1
+    "claimedBy": 1742722750804.0,
+    "demandScore": 80.3,
+    "daysUntilExpiry": 0
   },
   {
     "id": 1744195739771,
@@ -336,9 +325,9 @@
     "quantity": 17,
     "pickupLocation": "delhi",
     "expiryDate": "2025-05-07",
-    "claimedBy": 1742722750804,
-    "demandScore": 49.2,
-    "daysUntilExpiry": 27
+    "claimedBy": 1742722750804.0,
+    "demandScore": 59.0,
+    "daysUntilExpiry": 26
   },
   {
     "id": 1744195777686,
@@ -348,8 +337,8 @@
     "pickupLocation": "chennai",
     "expiryDate": "2025-04-14",
     "claimedBy": null,
-    "demandScore": 58.9,
-    "daysUntilExpiry": 4
+    "demandScore": 57.2,
+    "daysUntilExpiry": 3
   },
   {
     "id": 1744195792380,
@@ -358,9 +347,9 @@
     "quantity": 20,
     "pickupLocation": "kolkata",
     "expiryDate": "2025-04-15",
-    "claimedBy": 1742722619552,
-    "demandScore": 52.3,
-    "daysUntilExpiry": 5
+    "claimedBy": 1742722619552.0,
+    "demandScore": 57.8,
+    "daysUntilExpiry": 4
   },
   {
     "id": 1744195805903,
@@ -370,8 +359,8 @@
     "pickupLocation": "agra",
     "expiryDate": "2025-05-10",
     "claimedBy": null,
-    "demandScore": 47,
-    "daysUntilExpiry": 30
+    "demandScore": 78.3,
+    "daysUntilExpiry": 29
   },
   {
     "id": 1744195832556,
@@ -381,8 +370,8 @@
     "pickupLocation": "lucknow",
     "expiryDate": "2025-05-09",
     "claimedBy": null,
-    "demandScore": 18.3,
-    "daysUntilExpiry": 29
+    "demandScore": 23.2,
+    "daysUntilExpiry": 28
   },
   {
     "id": 1744195856626,
@@ -392,8 +381,8 @@
     "pickupLocation": "delhi",
     "expiryDate": "2025-04-23",
     "claimedBy": null,
-    "demandScore": 24.5,
-    "daysUntilExpiry": 13
+    "demandScore": 43.1,
+    "daysUntilExpiry": 12
   },
   {
     "id": 1744195903039,
@@ -403,8 +392,8 @@
     "pickupLocation": "nagpur",
     "expiryDate": "2025-04-24",
     "claimedBy": null,
-    "demandScore": 62.5,
-    "daysUntilExpiry": 14
+    "demandScore": 23.3,
+    "daysUntilExpiry": 13
   },
   {
     "id": 1744197649993,
@@ -414,8 +403,8 @@
     "pickupLocation": "chennai",
     "expiryDate": "2025-05-07",
     "claimedBy": null,
-    "demandScore": 53.4,
-    "daysUntilExpiry": 27
+    "demandScore": 78.1,
+    "daysUntilExpiry": 26
   },
   {
     "id": 1744197699173,
@@ -424,9 +413,9 @@
     "quantity": "21",
     "pickupLocation": "chennai",
     "expiryDate": "2025-05-07",
-    "claimedBy": 1742722750804,
-    "demandScore": 53.4,
-    "daysUntilExpiry": 27
+    "claimedBy": 1742722750804.0,
+    "demandScore": 78.1,
+    "daysUntilExpiry": 26
   },
   {
     "id": 1744197714909,
@@ -435,9 +424,9 @@
     "quantity": "21",
     "pickupLocation": "chennai",
     "expiryDate": "2025-05-06",
-    "claimedBy": 1742722750804,
-    "demandScore": 55.4,
-    "daysUntilExpiry": 26
+    "claimedBy": 1742722750804.0,
+    "demandScore": 79.2,
+    "daysUntilExpiry": 25
   },
   {
     "id": 1744197750662,
@@ -447,8 +436,8 @@
     "pickupLocation": "chennai",
     "expiryDate": "2025-05-06",
     "claimedBy": null,
-    "demandScore": 44,
-    "daysUntilExpiry": 26
+    "demandScore": 40.3,
+    "daysUntilExpiry": 25
   },
   {
     "id": 1744201152107,
@@ -458,8 +447,8 @@
     "pickupLocation": "chennai",
     "expiryDate": "2025-05-06",
     "claimedBy": null,
-    "demandScore": 44,
-    "daysUntilExpiry": 26
+    "demandScore": 40.3,
+    "daysUntilExpiry": 25
   },
   {
     "id": 1744201286282,
@@ -469,8 +458,8 @@
     "pickupLocation": "chennai",
     "expiryDate": "2025-05-02",
     "claimedBy": null,
-    "demandScore": 63,
-    "daysUntilExpiry": 22
+    "demandScore": 83.3,
+    "daysUntilExpiry": 21
   },
   {
     "id": 1744201311085,
@@ -480,8 +469,8 @@
     "pickupLocation": "chennai",
     "expiryDate": "2025-05-08",
     "claimedBy": null,
-    "demandScore": 26.4,
-    "daysUntilExpiry": 28
+    "demandScore": 81.1,
+    "daysUntilExpiry": 27
   },
   {
     "id": 1744201423105,
@@ -491,8 +480,8 @@
     "pickupLocation": "chennai",
     "expiryDate": "2025-04-16",
     "claimedBy": null,
-    "demandScore": 44,
-    "daysUntilExpiry": 6
+    "demandScore": 71.2,
+    "daysUntilExpiry": 5
   },
   {
     "id": 1744202251828,
@@ -502,8 +491,8 @@
     "pickupLocation": "mumbai",
     "expiryDate": "2025-04-17",
     "claimedBy": null,
-    "demandScore": 72.2,
-    "daysUntilExpiry": 7
+    "demandScore": 74.5,
+    "daysUntilExpiry": 6
   },
   {
     "id": 1744202269350,
@@ -513,8 +502,8 @@
     "pickupLocation": "delhi",
     "expiryDate": "2025-04-15",
     "claimedBy": null,
-    "demandScore": 25.3,
-    "daysUntilExpiry": 5
+    "demandScore": 12.1,
+    "daysUntilExpiry": 4
   },
   {
     "id": 1744202314403,
@@ -524,8 +513,8 @@
     "pickupLocation": "chennai",
     "expiryDate": "2025-05-10",
     "claimedBy": null,
-    "demandScore": 34.3,
-    "daysUntilExpiry": 30
+    "demandScore": 26.7,
+    "daysUntilExpiry": 29
   },
   {
     "id": 1744202610064,
@@ -534,9 +523,9 @@
     "quantity": "21",
     "pickupLocation": "delhi",
     "expiryDate": "2025-04-23",
-    "claimedBy": 1742722750804,
-    "demandScore": 24.5,
-    "daysUntilExpiry": 13
+    "claimedBy": 1742722750804.0,
+    "demandScore": 43.1,
+    "daysUntilExpiry": 12
   },
   {
     "id": 1744203386007,
@@ -546,7 +535,29 @@
     "pickupLocation": "lucknow",
     "expiryDate": "2025-04-27",
     "claimedBy": null,
-    "demandScore": 67.7,
-    "daysUntilExpiry": 17
+    "demandScore": 71.9,
+    "daysUntilExpiry": 16
+  },
+  {
+    "id": 1744269126672,
+    "donorId": 1742722053704,
+    "foodItem": "grapes",
+    "quantity": "7",
+    "pickupLocation": "mumbai",
+    "expiryDate": "2025-04-17",
+    "claimedBy": null,
+    "demandScore": 17.9,
+    "daysUntilExpiry": 6
+  },
+  {
+    "id": 1744269175391,
+    "donorId": 1742722053704,
+    "foodItem": "chicken",
+    "quantity": "9",
+    "pickupLocation": "kolkata",
+    "expiryDate": "2025-04-13",
+    "claimedBy": null,
+    "demandScore": 18.9,
+    "daysUntilExpiry": 2
   }
 ]

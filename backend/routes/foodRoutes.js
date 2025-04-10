@@ -93,8 +93,23 @@ router.get("/all", verifyRole(["ngo"]), (req, res) => {
 // Get Donor's Own Listings
 router.get("/my-listings", verifyRole(["donor"]), (req, res) => {
     const foodListings = readFoodListings();
-    const donorListings = foodListings.filter(listing => listing.donorId === req.user.id);
+    const users = readUsers();
+    const donorListings = foodListings
+        .filter(listing => listing.donorId === req.user.id)
+        .map(listing => {
+            if (listing.claimedBy) {
+                const ngo = users.find(user => user.id === listing.claimedBy);
+                return {
+                    ...listing,
+                    ngoName: ngo ? ngo.name : "Unknown NGO",
+                    ngoEmail: ngo ? ngo.email : "Unknown Email"
+                };
+            }
+            return listing;
+        });
+
     res.json(donorListings);
+
 });
 
 // Claim Food Listing (NGO Only)
